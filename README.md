@@ -1,9 +1,9 @@
-<p align=center>Use your trackpad as (MIDI) drumpad.</p>
+<p align=center>Ever wondered what to do with this unnecessarily huge trackpad of yours? It's perfect for MIDI drum pads, MPE keys, CC's and more!</p>
 
 ![drumpad](Art/drumpad.gif)
 
 ## Installation
-Download the [latest release](https://github.com/Dev1an/Trackpad-Drummer/releases/latest). If you like the project, click on the star button on the top right of this page.
+This is a fork of Dev1an's project. I don't have releases yet, so please clone the repo, do `pod install`, open workspace and compile. For some reason, it doesn't work with App Sandbox enabled, so turn it off. Also turn off Build Settings->Sandbox user scripts, otherwise it won't build.
 
 ## Compatibility
 
