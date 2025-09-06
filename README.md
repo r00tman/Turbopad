@@ -3,7 +3,7 @@
 ![drumpad](Art/drumpad.gif)
 
 ## Installation
-This is a fork of Dev1an's project. I don't have releases yet, so please clone the repo, do `pod install`, open workspace and compile. For some reason, it doesn't work with App Sandbox enabled, so turn it off. Also turn off Build Settings->Sandbox user scripts, otherwise it won't build.
+This is a fork of [Dev1an/Trackpad-Drummer](https://github.com/Dev1an/Trackpad-Drummer) project. I don't have GitHub releases yet, so please clone the repo, do `pod install`, open workspace in Xcode and compile. For some reason, it doesn't work with App Sandbox enabled, so turn it off, idk which entitlement it needs. Also turn off Build Settings->Sandbox user scripts, otherwise it won't build.
 
 ## Compatibility
 
