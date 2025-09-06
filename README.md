@@ -1,9 +1,17 @@
-<p align=center>Ever wondered what to do with this unnecessarily huge trackpad of yours?<br/> Turns out it's perfect for MIDI drum pads, MPE keys, CC's and more!</p>
+<p align=center>Ever wondered what to do with this unnecessarily huge trackpad of yours?<br/> Turns out it's perfect for velocity-sensitive MIDI drum pads, MPE keys, CC's and more!</p>
 
 ![drumpad](Art/drumpad.gif)
 
+## Project status
+This is a fork of [Dev1an/Trackpad-Drummer](https://github.com/Dev1an/Trackpad-Drummer) project. It works ok, but the last update was in 2018, which is 7 years ago already.
+
+So far, I added support for customizing pads by detecting them automatically from the storyboard. By default it's kick, snare, closed hi-hat and open hi-hat (sent through MIDI; output is customizable in Settings). Also added support for velocity-sensitive playing with built-in sounds. Dev1an detected velocities through touched finger size, which feels surprisingly ok after practice.
+
+Next, I plan adding CC sliders page (pitch bend strip + xy modulation, similar to Arturia KeyStep) so that I could replace my janky and laggy TouchOSC setup with the integrated trackpad.
+I would love to see a page with MPE Linnstrument-like keys, they would be super fun to have, however that's definitely not the first priority.
+
 ## Installation
-This is a fork of [Dev1an/Trackpad-Drummer](https://github.com/Dev1an/Trackpad-Drummer) project. I don't have GitHub releases yet, so please clone the repo, do `pod install`, open workspace in Xcode and compile. For some reason, it doesn't work with App Sandbox enabled, so turn it off, idk which entitlement it needs. Also turn off Build Settings->Sandbox user scripts, otherwise it won't build.
+I don't have GitHub releases yet, so please clone the repo, do `pod install`, open workspace in Xcode and compile. For some reason, it doesn't work with App Sandbox enabled, so turn it off, idk which entitlement it needs. Also turn off Build Settings->Sandbox user scripts, otherwise it won't build.
 
 ## Compatibility
 
