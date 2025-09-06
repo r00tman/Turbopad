@@ -10,7 +10,7 @@ So far, I added
 - [x] CC page (Pitch Bend+Mod XY CC's, similar to Arturia KeyStep)
 - [x] Persistent settings (CC mode vs Drum mode, MIDI vs Audio output)
 - [x] Window resizing support
-- [x} Velocity sensitivity not only for MIDI but for built-in sounds too. Dev1an detected velocities through touched finger size, which feels surprisingly ok after practice.
+- [x] Velocity sensitivity not only for MIDI but for built-in sounds too. Dev1an detected velocities through touched finger size, which feels surprisingly ok after practice.
 
 Ok, so I successfully replaced my janky and laggy TouchOSC setup with the integrated trackpad. One less device with battery to care about, no additional stands, almost instant response, super big=super precise controls. I'm happy.
 
