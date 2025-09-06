@@ -9,9 +9,16 @@
 import Cocoa
 import M5MultitouchSupport
 
+protocol PageHandler {
+	func setup(container: NSView);
+	func touchBegan(touch: M5MultitouchTouch);
+	func touchMoved(touch: M5MultitouchTouch);
+	func touchEnded(touch: M5MultitouchTouch);
+}
 
-class PadPageHandler {
-	var container: NSView;
+
+class PadPageHandler: PageHandler {
+	var container: NSView!;
 	let gridData: [CGRect] = [
 		CGRect(x: 0.00, y: 0.00, width: 0.33, height: 1.00),
 		CGRect(x: 0.33, y: 0.00, width: 0.33, height: 1.00),
@@ -25,8 +32,10 @@ class PadPageHandler {
 	let hardHitAnimation = CABasicAnimation()
 	
 	
-	init(container: NSView) {
+	func setup(container: NSView) {
+		assert(self.container == nil); // only setup once, can't resetup yet
 		self.container = container;
+		self.createGrid();
 	}
 	
 	func convertPointToView(point: CGPoint) -> CGPoint {

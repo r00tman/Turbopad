@@ -31,7 +31,7 @@ class PadController: NSViewController {
 	var fingerViews: Set<NSBox>!
 	var visibleFingers = [Int32: NSBox]()
 	
-	var page_handler: PadPageHandler?;
+	var page_handler: PageHandler?;
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -42,8 +42,8 @@ class PadController: NSViewController {
 		view.wantsRestingTouches = true
 		view.pressureConfiguration = NSPressureConfiguration(pressureBehavior: .primaryClick)
 		
-		self.page_handler = PadPageHandler(container: self.page_view);
-		self.page_handler?.createGrid();
+		self.page_handler = PadPageHandler();
+		self.page_handler?.setup(container: self.page_view);
 	}
 	
 	func touchHandler(event: M5MultitouchEvent?) {
