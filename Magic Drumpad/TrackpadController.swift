@@ -42,9 +42,26 @@ class TrackpadController: NSViewController {
 		view.wantsRestingTouches = true
 		view.pressureConfiguration = NSPressureConfiguration(pressureBehavior: .primaryClick)
 		
-		self.page_handler = CCPageHandler()
-//		self.page_handler = PadPageHandler()
-		self.page_handler?.setup(container: self.page_view)
+		loadSettings()
+		updateUI()
+		
+		NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: .settingsDidChange, object: nil)
+	}
+
+	@objc func updateUI() {
+		if ccMode {
+			if !(self.page_handler is CCPageHandler) {
+				self.page_handler = CCPageHandler()
+				self.page_view.subviews.removeAll();
+				self.page_handler?.setup(container: self.page_view)
+			}
+		} else {
+			if !(self.page_handler is PadPageHandler) {
+				self.page_handler = PadPageHandler()
+				self.page_view.subviews.removeAll();
+				self.page_handler?.setup(container: self.page_view)
+			}
+		}
 	}
 	
 	func touchHandler(event: M5MultitouchEvent?) {
@@ -132,6 +149,7 @@ class TrackpadController: NSViewController {
 	}
 	
 	deinit {
+		NotificationCenter.default.removeObserver(self)
 		M5MultitouchManager.shared()?.remove(touchListener)
 	}
 }

@@ -783,7 +783,7 @@
                     <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="aL0-FT-pX5">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="174" height="59"/>
+                        <rect key="contentRect" x="196" y="240" width="174" height="99"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
                         <connections>
                             <outlet property="delegate" destination="5R0-OS-hlL" id="RK4-BT-aLU"/>
@@ -795,17 +795,27 @@
                 </windowController>
                 <customObject id="Q39-EV-BBY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="529" y="356"/>
+            <point key="canvasLocation" x="529" y="375.5"/>
         </scene>
         <!--Settings Controller-->
         <scene sceneID="GGq-tu-a69">
             <objects>
                 <viewController showSeguePresentationStyle="single" id="a11-kg-Xol" customClass="SettingsController" customModule="Magic_Drumpad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="WoT-XT-swG">
-                        <rect key="frame" x="0.0" y="0.0" width="164" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <rect key="frame" x="0.0" y="0.0" width="164" height="82"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1lg-Yv-Wai">
+                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u6i-gr-846" userLabel="CC Mode">
+                                <rect key="frame" x="18" y="45" width="83" height="18"/>
+                                <buttonCell key="cell" type="check" title="CC Mode" bezelStyle="regularSquare" imagePosition="left" inset="2" id="r33-Dx-TNb">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="changeOutput:" target="a11-kg-Xol" id="haL-sL-ODR"/>
+                                </connections>
+                            </button>
+                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1lg-Yv-Wai">
                                 <rect key="frame" x="18" y="19" width="126" height="18"/>
                                 <buttonCell key="cell" type="check" title="Send MIDI notes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="vde-vJ-ec2">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -817,19 +827,19 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="1lg-Yv-Wai" secondAttribute="bottom" constant="20" id="8sP-hV-2Yo"/>
-                            <constraint firstItem="1lg-Yv-Wai" firstAttribute="leading" secondItem="WoT-XT-swG" secondAttribute="leading" constant="20" id="bmT-gd-Hdj"/>
-                            <constraint firstItem="1lg-Yv-Wai" firstAttribute="top" secondItem="WoT-XT-swG" secondAttribute="top" constant="20" id="gzl-wX-cm5"/>
-                            <constraint firstAttribute="trailing" secondItem="1lg-Yv-Wai" secondAttribute="trailing" constant="20" id="nHo-ec-QZq"/>
+                            <constraint firstItem="u6i-gr-846" firstAttribute="top" secondItem="WoT-XT-swG" secondAttribute="top" constant="20" id="0oG-pV-Lbm"/>
+                            <constraint firstAttribute="bottom" secondItem="1lg-Yv-Wai" secondAttribute="bottom" constant="20" id="MXb-yd-t62"/>
+                            <constraint firstItem="1lg-Yv-Wai" firstAttribute="top" secondItem="u6i-gr-846" secondAttribute="bottom" constant="10" id="gOF-wj-ywY"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ccSwitch" destination="u6i-gr-846" id="chU-6k-pCP"/>
                         <outlet property="midiSwitch" destination="1lg-Yv-Wai" id="VtY-Z7-fqb"/>
                     </connections>
                 </viewController>
                 <customObject id="BJq-So-B7L" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="529" y="572"/>
+            <point key="canvasLocation" x="529" y="586.5"/>
         </scene>
     </scenes>
     <resources>

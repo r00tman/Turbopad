@@ -22,24 +22,58 @@ let midiDrummers = [
 	MidiPlayer(note: 46, sender: midiSender)
 ]
 var drummers: [Player] = midiDrummers
+var ccMode = false;
+var midiMode = false;
+
+extension Notification.Name {
+	static let settingsDidChange = Notification.Name("settingsDidChange")
+}
+
+func loadSettings() {
+	// Load settings from UserDefaults or your model
+	ccMode = UserDefaults.standard.bool(forKey: "ccMode")
+	
+	midiMode = UserDefaults.standard.bool(forKey: "midiMode")
+	if midiMode {
+		drummers = midiDrummers;
+	} else {
+		drummers = soundDrummers;
+	}
+	
+	NotificationCenter.default.post(name: .settingsDidChange, object: nil)
+}
 
 class SettingsController: NSViewController {
 	@IBOutlet weak var midiSwitch: NSButton!
+	@IBOutlet weak var ccSwitch: NSButton!
+
+	func updateSwitches() {
+		midiSwitch.state = if (midiMode) { .on } else { .off }
+		ccSwitch.state = if (ccMode) { .on } else { .off }
+	}
 	
 	override func viewWillAppear() {
 		super.viewWillAppear()
-		if drummers.first is MidiPlayer {
-			midiSwitch.state = .on
-		} else {
-			midiSwitch.state = .off
-		}
+		loadSettings()
+		updateSwitches()
 	}
 	
 	@IBAction func changeOutput(_ sender: NSButton) {
-		if sender.state == .on {
-			drummers = midiDrummers
-		} else {
-			drummers = soundDrummers
+		if sender == midiSwitch {
+			midiMode = sender.state == .on;
+			
+			if midiMode {
+				drummers = midiDrummers
+			} else {
+				drummers = soundDrummers
+			}
+			UserDefaults.standard.set(midiMode, forKey: "midiMode")
+			NotificationCenter.default.post(name: .settingsDidChange, object: nil)
+		}
+		if sender == ccSwitch {
+			ccMode = sender.state == .on
+			UserDefaults.standard.set(ccMode, forKey: "ccMode")
+			NotificationCenter.default.post(name: .settingsDidChange, object: nil)
 		}
 	}
 	

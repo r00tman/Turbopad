@@ -147,6 +147,9 @@ class CCPageHandler: PageHandler {
 	var lastYVal: UInt8 = 0;
 	
 	func sendModCC() {
+		if !midiMode {
+			return;
+		}
 		let (x, y) = self.mod!.value
 		
 		let xVal = UInt8(x*127);

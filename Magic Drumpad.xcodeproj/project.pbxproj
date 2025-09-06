@@ -23,6 +23,7 @@
 		7B2123722E6CC3E6004B1DF7 /* CCPageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2123712E6CC3DB004B1DF7 /* CCPageHandler.swift */; };
 		7B2123742E6CC75D004B1DF7 /* SliderBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2123732E6CC755004B1DF7 /* SliderBox.swift */; };
 		7B2123762E6CD4E9004B1DF7 /* XYBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2123752E6CD4E5004B1DF7 /* XYBox.swift */; };
+		7B2123782E6CE1E2004B1DF7 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7B2123772E6CE1E2004B1DF7 /* PrivacyInfo.xcprivacy */; };
 		8BE12B42D96141F9BB80B8CC /* Pods_Magic_Drumpad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B8E66CD33D715CFAEF272F /* Pods_Magic_Drumpad.framework */; };
 		96F747B3C1FBC9393B969F1F /* Pods_Magic_DrumpadUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40C7EFB97F26E6555F1C2A1 /* Pods_Magic_DrumpadUITests.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		7B2123712E6CC3DB004B1DF7 /* CCPageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCPageHandler.swift; sourceTree = "<group>"; };
 		7B2123732E6CC755004B1DF7 /* SliderBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderBox.swift; sourceTree = "<group>"; };
 		7B2123752E6CD4E5004B1DF7 /* XYBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYBox.swift; sourceTree = "<group>"; };
+		7B2123772E6CE1E2004B1DF7 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		AA0C3D557A7BCC8B26189BDC /* Pods-Magic Drumpad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic Drumpad.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Magic Drumpad/Pods-Magic Drumpad.debug.xcconfig"; sourceTree = "<group>"; };
 		C6F5557768479E3B966A6EAE /* Pods-Magic DrumpadUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic DrumpadUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Magic DrumpadUITests/Pods-Magic DrumpadUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DF45C29B2997CCE8EEDC8EFE /* Pods-Magic DrumpadTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic DrumpadTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Magic DrumpadTests/Pods-Magic DrumpadTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				74447AB41EF6AD7400C428B9 /* Assets.xcassets */,
 				74447AB61EF6AD7400C428B9 /* Main.storyboard */,
 				74447AB91EF6AD7400C428B9 /* Info.plist */,
+				7B2123772E6CE1E2004B1DF7 /* PrivacyInfo.xcprivacy */,
 			);
 			path = "Magic Drumpad";
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B2123782E6CE1E2004B1DF7 /* PrivacyInfo.xcprivacy in Resources */,
 				74447AB51EF6AD7400C428B9 /* Assets.xcassets in Resources */,
 				74447AB81EF6AD7400C428B9 /* Main.storyboard in Resources */,
 			);
