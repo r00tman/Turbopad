@@ -24,7 +24,6 @@ Tested trackpads:
 - Written completely in Swift.
 - Outputs to speakers or to a MIDI device. 
 - Themed to support macOS Mojave Dark mode
-- <a href="https://developer.apple.com/developer-id/"><img alt="Notarized" align=middle src="Art/Notarized.jpg" width=90></a>
 
 ### Where to start ... for developers
 - User interface: [Main.storyboard](Magic%20Drumpad/Base.lproj/Main.storyboard)
