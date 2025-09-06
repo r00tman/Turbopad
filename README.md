@@ -1,4 +1,4 @@
-<p align=center>Ever wondered what to do with this unnecessarily huge trackpad of yours? It's perfect for MIDI drum pads, MPE keys, CC's and more!</p>
+<p align=center>Ever wondered what to do with this unnecessarily huge trackpad of yours?<br/> Turns out it's perfect for MIDI drum pads, MPE keys, CC's and more!</p>
 
 ![drumpad](Art/drumpad.gif)
 
