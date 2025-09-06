@@ -14,8 +14,8 @@ protocol Player {
 }
 
 extension Player {
-	func play() {
-		play(velocity: 1)
+	func play(velocity: Float) {
+		play(velocity: velocity)
 	}
 }
 
@@ -29,7 +29,9 @@ class SoundPlayer: Player {
 	}
 	
 	func play(velocity: Float) {
-		players.first {!$0.isPlaying}? .play()
+		
+		players.first {!$0.isPlaying}?.setVolume(velocity, fadeDuration: 0)
+		players.first {!$0.isPlaying}?.play()
 	}
 	
 	func stop() {}

@@ -68,6 +68,28 @@ class MidiSender {
 		try sendMessage(message)
 	}
 	
+	public func sendMidiCCMessage(controllerNumber: UInt8, value: UInt8, channel: UInt8 = 0) throws {
+		let ccCommand: UInt8 = 0xB0 + channel
+		let message: [UInt8] = [ccCommand, controllerNumber, value]
+		try sendMessage(message)
+	}
+	
+	public func sendPitchBendMessage(value: Int16, channel: UInt8 = 0) throws {
+		// Ensure the value is within the valid range for pitch bend
+		let clampedValue = max(-8192, min(value, 8191)) // MIDI pitch bend range is -8192 to 8191
+
+		// Calculate the status byte for Pitch Bend
+		let pitchBendCommand: UInt8 = 0xE0 + channel
+
+		// Extract the least significant 7 bits and the most significant 7 bits
+		let lsb = UInt8(clampedValue & 0x7F) // Least significant byte
+		let msb = UInt8((clampedValue >> 7) & 0x7F) // Most significant byte
+
+		// Construct the message
+		let message: [UInt8] = [pitchBendCommand, lsb, msb]
+		try sendMessage(message)
+	}
+	
 	public func sendMessage(_ data: [UInt8], to userOutput: MIDIEndpointRef? = nil) throws {
 		let output = userOutput ?? defaultOutput
 		

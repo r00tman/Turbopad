@@ -20,6 +20,7 @@ class PadController: NSViewController {
 	@IBOutlet weak var region1: NSBox!
 	@IBOutlet weak var region2: NSBox!
 	@IBOutlet weak var region3: NSBox!
+	@IBOutlet weak var region4: NSBox!
 	var regionMap = [NSBox]()
 	@IBOutlet weak var lockButton: NSButton!
 	
@@ -42,24 +43,41 @@ class PadController: NSViewController {
 		hardHitAnimation.toValue = NSColor.quaternaryLabelColor.cgColor
 		hardHitAnimation.duration = 0.2
 		
-		view.acceptsTouchEvents = true
+		view.allowedTouchTypes = [.direct, .indirect];
 		view.wantsRestingTouches = true
 		view.pressureConfiguration = NSPressureConfiguration(pressureBehavior: .primaryClick)
 		
 		regionMap = [
 			region1,
 			region2,
-			region3
+			region3,
+			region4
 		]
 	}
 		
 	func drummer(for point: (x: Float, y: Float)) -> Int {
-		if point.y < 0.5 {
-			return 0
-		} else {
-			return point.x < 0.5 ?
-				2 : 1
+		let container = self.view
+
+		// clamp to 0...1
+		let nx = max(0, min(1, point.x))
+		let ny = max(0, min(1, point.y))
+
+		// convert normalized point to view coordinate system (origin at bottom-left)
+		let viewPoint = CGPoint(x: CGFloat(nx) * container.bounds.width,
+								y: CGFloat(ny) * container.bounds.height)
+
+		// If boxes might be transformed or in different coordinate spaces, convert point to each box's superview
+		// Search front-to-back so we return the topmost region first.
+		let boxes = regionMap // adjust ordering if needed
+		for (index, box) in boxes.enumerated().reversed() { // reversed() -> last in array considered frontmost; change if different
+			// Convert point from view's coordinate system into the box's coordinate system
+			let pointInBox = container.convert(viewPoint, to: box)
+			if box.bounds.contains(pointInBox) {
+				return index
+			}
 		}
+
+		return -1 // not found
 	}
 	
 	func touchHandler(event: M5MultitouchEvent?) {
@@ -77,12 +95,16 @@ class PadController: NSViewController {
 	func touchBegan(touch: M5MultitouchTouch) {
 		let size = min(touch.size, 2.5) / 2.5
 		let drummerIndex = drummer(for: (touch.posX, touch.posY))
-		drummers[drummerIndex].play(velocity: size)
+		if (drummerIndex >= 0) {
+			drummers[drummerIndex].play(velocity: size);
+		}
 		
 		DispatchQueue.main.async {
 			let x = (self.view.frame.width - self.fingerSize) * CGFloat(touch.posX)
 			let y = (self.view.frame.height - self.fingerSize) * CGFloat(touch.posY)
-			self.regionMap[drummerIndex].layer?.add(size>0.8 ? self.hardHitAnimation:self.hitAnimation, forKey: "backgroundColor")
+			if (drummerIndex >= 0) {
+				self.regionMap[drummerIndex].layer?.add(size>0.8 ? self.hardHitAnimation:self.hitAnimation, forKey: "backgroundColor")
+			}
 			
 			if let fingerView = self.fingerViews.subtracting(self.visibleFingers.values).first {
 				self.visibleFingers[touch.identifier] = fingerView
@@ -103,7 +125,9 @@ class PadController: NSViewController {
 	
 	func touchEnded(touch: M5MultitouchTouch) {
 		let index = drummer(for: (touch.posX, touch.posY))
-		drummers[index].stop()
+		if (index >= 0) {
+			drummers[index].stop()
+		}
 		if let box = visibleFingers.removeValue(forKey: touch.identifier) {
 			hide(fingerBox: box)
 		}
