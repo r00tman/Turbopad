@@ -35,5 +35,3 @@ func *(left: CGSize, right: CGFloat) -> CGSize {
 		height: left.height * right
 	)
 }
-
-

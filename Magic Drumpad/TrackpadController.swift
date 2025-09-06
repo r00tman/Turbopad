@@ -11,7 +11,7 @@ import M5MultitouchSupport
 
 let escape = "\u{1b}"
 
-class PadController: NSViewController {
+class TrackpadController: NSViewController {
 	@IBOutlet weak var page_view: NSView!
 	
 	@IBOutlet weak var fingerView1: NSBox!
@@ -31,19 +31,20 @@ class PadController: NSViewController {
 	var fingerViews: Set<NSBox>!
 	var visibleFingers = [Int32: NSBox]()
 	
-	var page_handler: PageHandler?;
+	var page_handler: PageHandler?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		touchListener = M5MultitouchManager.shared()?.addListener(callback: touchHandler)
 		fingerViews = [fingerView1, fingerView2, fingerView3, fingerView4, fingerView5]
 		
-		view.allowedTouchTypes = [.direct, .indirect];
+		view.allowedTouchTypes = [.direct, .indirect]
 		view.wantsRestingTouches = true
 		view.pressureConfiguration = NSPressureConfiguration(pressureBehavior: .primaryClick)
 		
-		self.page_handler = PadPageHandler();
-		self.page_handler?.setup(container: self.page_view);
+		self.page_handler = CCPageHandler()
+//		self.page_handler = PadPageHandler()
+		self.page_handler?.setup(container: self.page_view)
 	}
 	
 	func touchHandler(event: M5MultitouchEvent?) {
@@ -59,7 +60,7 @@ class PadController: NSViewController {
 	}
 	
 	func touchBegan(touch: M5MultitouchTouch) {
-		self.page_handler?.touchBegan(touch: touch);
+		self.page_handler?.touchBegan(touch: touch)
 		
 		DispatchQueue.main.async {
 			let x = (self.view.frame.width - self.fingerSize) * CGFloat(touch.posX)
@@ -76,7 +77,7 @@ class PadController: NSViewController {
 	}
 	
 	func touchMoved(touch: M5MultitouchTouch) {
-		self.page_handler?.touchMoved(touch: touch);
+		self.page_handler?.touchMoved(touch: touch)
 		
 		if let fingerView = visibleFingers[touch.identifier] {
 			fingerView.frame.origin.x = (view.frame.width - fingerSize) * CGFloat(touch.posX)

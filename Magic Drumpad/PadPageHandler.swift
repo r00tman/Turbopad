@@ -10,7 +10,7 @@ import Cocoa
 import M5MultitouchSupport
 
 class PadPageHandler: PageHandler {
-	var container: NSView!;
+	var container: NSView!
 	let gridData: [CGRect] = [
 		CGRect(x: 0.00, y: 0.00, width: 0.33, height: 1.00),
 		CGRect(x: 0.33, y: 0.00, width: 0.33, height: 1.00),
@@ -25,9 +25,9 @@ class PadPageHandler: PageHandler {
 	
 	
 	func setup(container: NSView) {
-		assert(self.container == nil); // only setup once, can't resetup yet
-		self.container = container;
-		self.createGrid();
+		assert(self.container == nil) // only setup once, can't resetup yet
+		self.container = container
+		self.createGrid()
 	}
 	
 	func convertPointToView(point: CGPoint) -> CGPoint {
@@ -51,10 +51,10 @@ class PadPageHandler: PageHandler {
 		self.hardHitAnimation.toValue = NSColor.quaternaryLabelColor.cgColor
 		self.hardHitAnimation.duration = 0.2
 		
-		for (index, data) in gridData.enumerated() {
+		for data in gridData {
 			let frame = convertRectToView(rect: data)
-			let pad = CGSize(width: 3, height: 3)
-			let paddedFrame = CGRect(origin: frame.origin + pad, size: frame.size - pad*2);
+			let pad: CGFloat = 3
+			let paddedFrame = frame.insetBy(dx: pad, dy: pad)
 
 			let box = NSBox(frame: paddedFrame)
 			box.wantsLayer = true
@@ -62,8 +62,6 @@ class PadPageHandler: PageHandler {
 			box.layer?.borderColor = NSColor.separatorColor.cgColor
 			box.layer?.cornerRadius = 4
 			box.layer?.backgroundColor = NSColor.quaternaryLabelColor.cgColor
-			box.title = "Pad \(index)"
-			box.titlePosition = .atTop
 			box.autoresizingMask = [.width, .height, .minXMargin, .minYMargin, .maxXMargin, .maxYMargin]
 			
 			self.container.addSubview(box)
@@ -71,14 +69,14 @@ class PadPageHandler: PageHandler {
 		}
 	}
 	
-	func drummer(point: CGPoint) -> Int {
+	func drummer(at point: CGPoint) -> Int {
 		// clamp to 0...1
 		let nx = max(0, min(1, point.x))
 		let ny = max(0, min(1, point.y))
 		
 		let clampedPoint = CGPoint(x: nx, y: ny)
 		
-		for (index, box) in gridData.enumerated().reversed() { // reversed() -> last in array considered frontmost; change if different
+		for (index, box) in gridData.enumerated().reversed() { // reversed() -> last in array considered frontmost change if different
 			// Convert point from view's coordinate system into the box's coordinate system
 			if box.contains(clampedPoint) {
 				return index
@@ -88,16 +86,16 @@ class PadPageHandler: PageHandler {
 		return -1 // not found
 	}
 	
-	func drummer(x: Float, y: Float) -> Int {
-		let point = CGPoint(x: CGFloat(x), y: CGFloat(y))
-		return drummer(point: point)
+	func drummer(at point: (x: Float, y: Float)) -> Int {
+		let point = CGPoint(x: CGFloat(point.x), y: CGFloat(point.y))
+		return drummer(at: point)
 	}
 	
 	func touchBegan(touch: M5MultitouchTouch) {
 		let size = min(touch.size, 2.5) / 2.5
-		let drummerIndex = drummer(x: touch.posX, y: touch.posY)
+		let drummerIndex = drummer(at: (touch.posX, touch.posY))
 		if (drummerIndex >= 0) {
-			drummers[drummerIndex].play(velocity: size);
+			drummers[drummerIndex].play(velocity: size)
 			
 			DispatchQueue.main.async {
 				self.boxes[drummerIndex].layer?.add(size>0.8 ? self.hardHitAnimation:self.hitAnimation, forKey: "backgroundColor")
@@ -109,7 +107,7 @@ class PadPageHandler: PageHandler {
 	}
 	
 	func touchEnded(touch: M5MultitouchTouch) {
-		let index = drummer(x: touch.posX, y: touch.posY)
+		let index = drummer(at: (touch.posX, touch.posY))
 		if (index >= 0) {
 			drummers[index].stop()
 		}

@@ -10,8 +10,8 @@ import Cocoa
 import M5MultitouchSupport
 
 protocol PageHandler {
-	func setup(container: NSView);
-	func touchBegan(touch: M5MultitouchTouch);
-	func touchMoved(touch: M5MultitouchTouch);
-	func touchEnded(touch: M5MultitouchTouch);
+	func setup(container: NSView)
+	func touchBegan(touch: M5MultitouchTouch)
+	func touchMoved(touch: M5MultitouchTouch)
+	func touchEnded(touch: M5MultitouchTouch)
 }
