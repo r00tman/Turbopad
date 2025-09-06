@@ -747,10 +747,10 @@
                                 <color key="fillColor" name="Finger color"/>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gm3-YX-CuU">
-                                <rect key="frame" x="202" y="20" width="76" height="18"/>
-                                <buttonCell key="cell" type="inline" title="Lock mouse" bezelStyle="inline" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nsF-If-q0J">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                                    <font key="font" metaFont="smallSystemBold"/>
+                                <rect key="frame" x="199" y="19" width="82" height="19"/>
+                                <buttonCell key="cell" type="roundRect" title="Lock mouse" bezelStyle="roundedRect" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nsF-If-q0J">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="lockMouse:" target="XfG-lQ-9wD" id="b8V-n6-MNJ"/>
