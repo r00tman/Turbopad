@@ -695,53 +695,17 @@
                 <viewController id="XfG-lQ-9wD" customClass="PadController" customModule="Magic_Drumpad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <box wantsLayer="YES" fixedFrame="YES" boxType="custom" borderWidth="0.0" cornerRadius="3" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="UlH-Fm-SOT">
-                                <rect key="frame" x="3" y="6" width="145" height="257"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" id="iLk-pr-yGu">
-                                    <rect key="frame" x="0.0" y="0.0" width="145" height="257"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <color key="borderColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.87067121479999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="fillColor" name="quaternaryLabelColor" catalog="System" colorSpace="catalog"/>
-                            </box>
-                            <box wantsLayer="YES" fixedFrame="YES" boxType="custom" borderWidth="0.0" cornerRadius="3" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="eAi-lg-W3O" userLabel="Region2">
-                                <rect key="frame" x="153" y="7" width="173" height="256"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" id="Bdt-aR-xFc">
-                                    <rect key="frame" x="0.0" y="0.0" width="173" height="256"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <color key="borderColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
-                                <color key="fillColor" name="quaternaryLabelColor" catalog="System" colorSpace="catalog"/>
-                            </box>
-                            <box wantsLayer="YES" fixedFrame="YES" boxType="custom" borderWidth="0.0" cornerRadius="3" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="i6D-u0-ncL" userLabel="Region3">
-                                <rect key="frame" x="331" y="7" width="148" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" id="51Q-eU-RV9">
-                                    <rect key="frame" x="0.0" y="0.0" width="148" height="131"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <color key="borderColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
-                                <color key="fillColor" name="quaternaryLabelColor" catalog="System" colorSpace="catalog"/>
-                            </box>
-                            <box wantsLayer="YES" fixedFrame="YES" boxType="custom" borderWidth="0.0" cornerRadius="3" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="0w1-Pg-p8m" userLabel="Region4">
-                                <rect key="frame" x="331" y="145" width="148" height="118"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <view key="contentView" id="9to-Fj-Za7">
-                                    <rect key="frame" x="0.0" y="0.0" width="148" height="118"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <color key="borderColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
-                                <color key="fillColor" name="quaternaryLabelColor" catalog="System" colorSpace="catalog"/>
-                            </box>
+                            <customView id="Hpk-PB-cox" userLabel="Page View">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </customView>
                             <box fixedFrame="YES" boxType="custom" borderType="none" cornerRadius="12" title="Box" transparent="YES" translatesAutoresizingMaskIntoConstraints="NO" id="der-H1-t4P">
-                                <rect key="frame" x="48" y="88" width="25" height="25"/>
+                                <rect key="frame" x="48" y="88" width="24" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="RrE-EP-fj4">
-                                    <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="24" height="25"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <color key="fillColor" name="Finger color"/>
@@ -774,10 +738,10 @@
                                 <color key="fillColor" name="Finger color"/>
                             </box>
                             <box fixedFrame="YES" boxType="custom" borderType="none" cornerRadius="12" title="Box" transparent="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q9h-Xm-FBj">
-                                <rect key="frame" x="287" y="124" width="25" height="25"/>
+                                <rect key="frame" x="287" y="124" width="23" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <view key="contentView" id="oeV-5B-eSh">
-                                    <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="23" height="25"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <color key="fillColor" name="Finger color"/>
@@ -805,10 +769,7 @@
                         <outlet property="fingerView4" destination="ZIC-lB-IG1" id="FgZ-gF-UVZ"/>
                         <outlet property="fingerView5" destination="q9h-Xm-FBj" id="uuy-KE-ofG"/>
                         <outlet property="lockButton" destination="gm3-YX-CuU" id="6TT-nq-l13"/>
-                        <outlet property="region1" destination="UlH-Fm-SOT" id="iMQ-tl-hBI"/>
-                        <outlet property="region2" destination="eAi-lg-W3O" id="d5L-gg-M7D"/>
-                        <outlet property="region3" destination="i6D-u0-ncL" id="RDy-DX-YhO"/>
-                        <outlet property="region4" destination="0w1-Pg-p8m" id="DDz-ow-Gh8"/>
+                        <outlet property="page_view" destination="Hpk-PB-cox" id="wrH-9N-TEK"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

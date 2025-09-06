@@ -29,9 +29,9 @@ class SoundPlayer: Player {
 	}
 	
 	func play(velocity: Float) {
-		
-		players.first {!$0.isPlaying}?.setVolume(velocity, fadeDuration: 0)
-		players.first {!$0.isPlaying}?.play()
+		let player = players.first {!$0.isPlaying};
+		player?.setVolume(velocity, fadeDuration: 0)
+		player?.play()
 	}
 	
 	func stop() {}
