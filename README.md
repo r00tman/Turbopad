@@ -15,16 +15,14 @@ So far, I added
 - [x] Persistent settings (CC mode vs Drum mode, MIDI vs Audio output)
 - [x] Window resizing support
 - [x] Velocity sensitivity not only for MIDI but for built-in sounds too. Dev1an detected velocities through touched finger size, which feels surprisingly ok after practice.
+- [x] Runtime global hotkey toggles:
+  - [x] on/off switch/global shortcut to avoid Midas touch,
+  - [x] absolute/relative modes for slider&mod xy,
+  - [x] auto reset for mod xy,
+  - [x] toggle between CC and Drum modes,
+  - [x] mouse lock/unlock and bring app to front.
 
 Ok, so I successfully replaced my janky and laggy TouchOSC setup with the integrated trackpad. One less device with battery to care about, no additional stands, almost instant response, super big=super precise controls. I'm happy.
-
-Next, I want some runtime toggles: 
-- [ ] on/off switch/global shortcut to avoid Midas touch,
-- [ ] absolute/relative modes for slider&mod xy,
-- [ ] auto reset for mod xy,
-- [ ] toggle between CC and Drum modes.
-
-They all are already implemented in the code, but are yet to be exposed through UI/keyboard controls.
 
 I would love to see a page with MPE Linnstrument-like keys, they would be super fun to have. Maybe also refactor code so that it's user-configurable, not just through code?
 
