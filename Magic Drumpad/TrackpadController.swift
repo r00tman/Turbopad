@@ -64,6 +64,7 @@ class TrackpadController: NSViewController {
 		})
 		
 		hotKeyLock = HotKey(key: .f8, modifiers: [.command, .shift], keyDownHandler: {
+			NSApp.activate(ignoringOtherApps: true)
 			self.lockButton.performClick(self.lockButton)
 		})
 		
