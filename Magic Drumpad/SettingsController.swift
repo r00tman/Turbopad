@@ -43,6 +43,24 @@ func loadSettings() {
 	NotificationCenter.default.post(name: .settingsDidChange, object: nil)
 }
 
+func setMidiMode(value: Bool) {
+	midiMode = value;
+	
+	if midiMode {
+		drummers = midiDrummers
+	} else {
+		drummers = soundDrummers
+	}
+	UserDefaults.standard.set(midiMode, forKey: "midiMode")
+	NotificationCenter.default.post(name: .settingsDidChange, object: nil)
+}
+
+func setCCMode(value: Bool) {
+	ccMode = value
+	UserDefaults.standard.set(ccMode, forKey: "ccMode")
+	NotificationCenter.default.post(name: .settingsDidChange, object: nil)
+}
+
 class SettingsController: NSViewController {
 	@IBOutlet weak var midiSwitch: NSButton!
 	@IBOutlet weak var ccSwitch: NSButton!
@@ -60,20 +78,10 @@ class SettingsController: NSViewController {
 	
 	@IBAction func changeOutput(_ sender: NSButton) {
 		if sender == midiSwitch {
-			midiMode = sender.state == .on;
-			
-			if midiMode {
-				drummers = midiDrummers
-			} else {
-				drummers = soundDrummers
-			}
-			UserDefaults.standard.set(midiMode, forKey: "midiMode")
-			NotificationCenter.default.post(name: .settingsDidChange, object: nil)
+			setMidiMode(value: sender.state == .on)
 		}
 		if sender == ccSwitch {
-			ccMode = sender.state == .on
-			UserDefaults.standard.set(ccMode, forKey: "ccMode")
-			NotificationCenter.default.post(name: .settingsDidChange, object: nil)
+			setCCMode(value: ccSwitch.state == .on)
 		}
 	}
 	

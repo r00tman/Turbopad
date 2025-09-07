@@ -8,6 +8,7 @@
 
 import Cocoa
 import M5MultitouchSupport
+import HotKey
 
 let escape = "\u{1b}"
 
@@ -22,6 +23,9 @@ class TrackpadController: NSViewController {
 
 	@IBOutlet weak var lockButton: NSButton!
 	
+	@IBOutlet weak var disabledLabel: NSView!;
+	@IBOutlet weak var statusLabel: NSTextField!;
+	
 	var touchListener: M5MultitouchListener?
 	var fingerSize: CGFloat {
 		get {
@@ -31,7 +35,16 @@ class TrackpadController: NSViewController {
 	var fingerViews: Set<NSBox>!
 	var visibleFingers = [Int32: NSBox]()
 	
-	var page_handler: PageHandler?
+	var pageHandler: PageHandler?
+	
+	var hotKeyToggle: HotKey?;
+	var hotKeyMode: HotKey?;
+	var hotKeyLock: HotKey?;
+	var hotKeyPBAbs: HotKey?;
+	var hotKeyXYAbs: HotKey?;
+	var hotKeyXYReset: HotKey?;
+	
+	var isDisabled: Bool = false;
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -45,26 +58,103 @@ class TrackpadController: NSViewController {
 		loadSettings()
 		updateUI()
 		
+		hotKeyToggle = HotKey(key: .f9, modifiers: [.command, .shift], keyDownHandler: {
+			self.isDisabled = !self.isDisabled;
+			self.updateUI();
+		})
+		
+		hotKeyLock = HotKey(key: .f8, modifiers: [.command, .shift], keyDownHandler: {
+			self.lockButton.performClick(self.lockButton)
+		})
+		
+		hotKeyMode = HotKey(key: .f7, modifiers: [.command, .shift], keyDownHandler: {
+			setCCMode(value: !ccMode)
+		})
+		
+		hotKeyPBAbs = HotKey(key: .f10, modifiers: [.command, .shift], keyDownHandler: {
+			if !ccMode {
+				return;
+			}
+			let cch = self.pageHandler as! CCPageHandler?
+			cch!.sliderAbsMode = !cch!.sliderAbsMode
+			self.updateStatus()
+		})
+		
+		hotKeyXYAbs = HotKey(key: .f11, modifiers: [.command, .shift], keyDownHandler: {
+			if !ccMode {
+				return;
+			}
+			let cch = self.pageHandler as! CCPageHandler?
+			cch!.modAbsMode = !cch!.modAbsMode
+			self.updateStatus()
+		})
+		
+		hotKeyXYReset = HotKey(key: .f12, modifiers: [.command, .shift], keyDownHandler: {
+			if !ccMode {
+				return;
+			}
+			let cch = self.pageHandler as! CCPageHandler?
+			cch!.modAutoReset = !cch!.modAutoReset
+			self.updateStatus()
+		})
+		
+		
 		NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: .settingsDidChange, object: nil)
+	}
+	
+	func updateStatus() {
+		var res = ""
+		if ccMode {
+			res += "CC Mode"
+			
+			let cch = pageHandler as! CCPageHandler?;
+			
+			if cch!.sliderAbsMode {
+				res += " | PB Abs Mode"
+			} else {
+				res += " | PB Rel Mode"
+			}
+			
+			if cch!.modAbsMode {
+				res += " | Mod XY Abs Mode"
+			} else {
+				res += " | Mod XY Rel Mode"
+			}
+			
+			if cch!.modAutoReset {
+				res += " | Mod XY Auto Reset ON"
+			} else {
+				res += " | Mod XY Auto Reset OFF"
+			}
+		} else {
+			res += "Pad Mode"
+		}
+		
+		statusLabel.stringValue = res
 	}
 
 	@objc func updateUI() {
 		if ccMode {
-			if !(self.page_handler is CCPageHandler) {
-				self.page_handler = CCPageHandler()
+			if !(self.pageHandler is CCPageHandler) {
+				self.pageHandler = CCPageHandler()
 				self.page_view.subviews.removeAll();
-				self.page_handler?.setup(container: self.page_view)
+				self.pageHandler?.setup(container: self.page_view)
 			}
 		} else {
-			if !(self.page_handler is PadPageHandler) {
-				self.page_handler = PadPageHandler()
+			if !(self.pageHandler is PadPageHandler) {
+				self.pageHandler = PadPageHandler()
 				self.page_view.subviews.removeAll();
-				self.page_handler?.setup(container: self.page_view)
+				self.pageHandler?.setup(container: self.page_view)
 			}
 		}
+		disabledLabel.isHidden = !isDisabled
+		self.updateStatus()
 	}
 	
 	func touchHandler(event: M5MultitouchEvent?) {
+		if isDisabled {
+			return;
+		}
 		for object in event!.touches {
 			let touch = object as! M5MultitouchTouch
 			switch touch.state {
@@ -77,7 +167,7 @@ class TrackpadController: NSViewController {
 	}
 	
 	func touchBegan(touch: M5MultitouchTouch) {
-		self.page_handler?.touchBegan(touch: touch)
+		self.pageHandler?.touchBegan(touch: touch)
 		
 		DispatchQueue.main.async {
 			let x = (self.view.frame.width - self.fingerSize) * CGFloat(touch.posX)
@@ -94,7 +184,7 @@ class TrackpadController: NSViewController {
 	}
 	
 	func touchMoved(touch: M5MultitouchTouch) {
-		self.page_handler?.touchMoved(touch: touch)
+		self.pageHandler?.touchMoved(touch: touch)
 		
 		if let fingerView = visibleFingers[touch.identifier] {
 			fingerView.frame.origin.x = (view.frame.width - fingerSize) * CGFloat(touch.posX)
@@ -103,7 +193,7 @@ class TrackpadController: NSViewController {
 	}
 	
 	func touchEnded(touch: M5MultitouchTouch) {
-		self.page_handler?.touchEnded(touch: touch)
+		self.pageHandler?.touchEnded(touch: touch)
 		
 		if let box = visibleFingers.removeValue(forKey: touch.identifier) {
 			hide(fingerBox: box)

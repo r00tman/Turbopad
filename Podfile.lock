@@ -1,18 +1,22 @@
 PODS:
+  - HotKey (0.2.1)
   - M5MultitouchSupport (1.1.0):
     - M5MultitouchSupport/Internal (= 1.1.0)
   - M5MultitouchSupport/Internal (1.1.0)
 
 DEPENDENCIES:
+  - HotKey
   - M5MultitouchSupport
 
 SPEC REPOS:
   trunk:
+    - HotKey
     - M5MultitouchSupport
 
 SPEC CHECKSUMS:
+  HotKey: 400beb7caa29054ea8d864c96f5ba7e5b4852277
   M5MultitouchSupport: ea076d72161140e3d37fb3d474b597aa5cd15484
 
-PODFILE CHECKSUM: 3e1571ab8c881b7bca4cf63bc07edbb688c5cbf8
+PODFILE CHECKSUM: dc23b3f16de9ad2721f107204b324f06acf301cc
 
 COCOAPODS: 1.16.2

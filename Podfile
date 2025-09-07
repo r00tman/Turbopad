@@ -7,6 +7,8 @@ target 'Magic Drumpad' do
 
   # Pods for Magic Drumpad
   pod 'M5MultitouchSupport'
+  
+  pod 'HotKey'
 
   target 'Magic DrumpadTests' do
     inherit! :search_paths
