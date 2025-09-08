@@ -13,10 +13,11 @@ class SliderBox: NSView {
 		didSet { needsDisplay = true }
 	}
 	
-	var cornerRadius: CGFloat = 4
-	var fillColor: NSColor = .systemBlue
-	var backgroundColor: NSColor = .windowBackgroundColor
-	var borderColor: NSColor = .secondaryLabelColor;
+	var cornerRadius: CGFloat = 2
+	var fillColor: NSColor = #colorLiteral(red: 0, green: 0.2220619044, blue: 0.4813616071, alpha: 0.3024042694)
+	var backgroundColor: NSColor = .quaternaryLabelColor.withAlphaComponent(0.01)
+	var borderColor: NSColor = .secondaryLabelColor
+	var borderWidth: CGFloat = 2
 	
 	override func draw(_ dirtyRect: NSRect) {
 		super.draw(dirtyRect)
@@ -48,7 +49,7 @@ class SliderBox: NSView {
 		
 		// --- Stroke border (optional, on top) ---
 		borderColor.setStroke()
-		clipPath.lineWidth = 1
+		clipPath.lineWidth = borderWidth
 		clipPath.stroke()
 	}
 }
