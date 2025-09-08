@@ -11,11 +11,20 @@ import M5MultitouchSupport
 
 class PadPageHandler: PageHandler {
 	var container: NSView!
+	// 0,0 - bottom left
 	let gridData: [CGRect] = [
-		CGRect(x: 0.00, y: 0.00, width: 0.33, height: 1.00),
-		CGRect(x: 0.33, y: 0.00, width: 0.33, height: 1.00),
-		CGRect(x: 0.66, y: 0.50, width: 0.33, height: 0.50),
-		CGRect(x: 0.66, y: 0.00, width: 0.33, height: 0.50)
+		CGRect(x: 0.00, y: 0.00, width: 0.25, height: 0.66),
+		CGRect(x: 0.25, y: 0.00, width: 0.25, height: 0.66),
+		CGRect(x: 0.50, y: 0.00, width: 0.25, height: 0.33),
+		CGRect(x: 0.50, y: 0.33, width: 0.25, height: 0.33),
+		
+		CGRect(x: 0.00, y: 0.66, width: 0.25, height: 0.33),
+		CGRect(x: 0.25, y: 0.66, width: 0.25, height: 0.33),
+		CGRect(x: 0.50, y: 0.66, width: 0.25, height: 0.33),
+		
+		CGRect(x: 0.75, y: 0.66, width: 0.25, height: 0.33),
+		CGRect(x: 0.75, y: 0.33, width: 0.25, height: 0.33),
+		CGRect(x: 0.75, y: 0.00, width: 0.25, height: 0.33),
 	]
 	
 	var boxes = [NSBox]()

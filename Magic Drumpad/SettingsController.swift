@@ -12,14 +12,30 @@ let soundDrummers = [
     SoundPlayer(withSound: NSDataAsset(name: .init("drum1"))!.data),
     SoundPlayer(withSound: NSDataAsset(name: .init("drum3"))!.data),
     SoundPlayer(withSound: NSDataAsset(name: .init("drum2"))!.data),
-	SoundPlayer(withSound: NSDataAsset(name: .init("drum2"))!.data)
+	SoundPlayer(withSound: NSDataAsset(name: .init("drum2"))!.data),
+	
+	SoundPlayer(withSound: NSDataAsset(name: .init("drum1"))!.data),
+	SoundPlayer(withSound: NSDataAsset(name: .init("drum1"))!.data),
+	SoundPlayer(withSound: NSDataAsset(name: .init("drum1"))!.data),
+	
+	SoundPlayer(withSound: NSDataAsset(name: .init("drum2"))!.data),
+	SoundPlayer(withSound: NSDataAsset(name: .init("drum2"))!.data),
+	SoundPlayer(withSound: NSDataAsset(name: .init("drum2"))!.data),
 ]
 let midiSender = try! MidiSender(name: "Magic Drumpad")
 let midiDrummers = [
     MidiPlayer(note: 36, sender: midiSender),
     MidiPlayer(note: 40, sender: midiSender),
     MidiPlayer(note: 42, sender: midiSender),
-	MidiPlayer(note: 46, sender: midiSender)
+	MidiPlayer(note: 46, sender: midiSender),
+	
+	MidiPlayer(note: 48, sender: midiSender),
+	MidiPlayer(note: 47, sender: midiSender),
+	MidiPlayer(note: 41, sender: midiSender),
+	
+	MidiPlayer(note: 49, sender: midiSender),
+	MidiPlayer(note: 57, sender: midiSender),
+	MidiPlayer(note: 51, sender: midiSender),
 ]
 var drummers: [Player] = midiDrummers
 var ccMode = false;
