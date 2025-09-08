@@ -4,7 +4,7 @@
 
 ## DISCLAIMER
 
-Today I started this repo. And also today I learned that there is already [Audioswift](https://audioswiftapp.com/), thanks Google. I have neither bought it, nor ever tried it, nor even downloaded it. But it seems to do quite similar things, so please **GO BUY AUDIOSWIFT INSTEAD OF USING THIS REPO**, as I am 100% sure that it is **MUCH MORE POLISHED** than the current state of this repo and that AudioSwift's developer will be **MUCH HAPPIER** too if you do. I'll continue developing this repo anyway, as I want to play around with this idea myself, with the max level of control and customization possible, i.e., with direct access to my source code.
+Today I started this repo. And also today I learned that there is already [Audioswift](https://audioswiftapp.com/), thanks Google. I have neither bought it, nor ever tried it, nor even downloaded it. But it seems to do quite similar things, so please **CONSIDER BUYING AUDIOSWIFT INSTEAD OF USING THIS REPO**, as I am 100% sure that it is **MUCH MORE POLISHED** than the current state of this repo and that AudioSwift's developer will be **MUCH HAPPIER** too if you do. I'll continue developing this repo anyway, as I want to play around with this idea myself, with the max level of control and customization possible, i.e., with direct access to my source code.
 
 ## Project status
 This is a fork of [Dev1an/Trackpad-Drummer](https://github.com/Dev1an/Trackpad-Drummer) project. It works ok, but the last update was in 2018, which is 7 years ago already.
@@ -16,11 +16,11 @@ So far, I added
 - [x] Window resizing support
 - [x] Velocity sensitivity not only for MIDI but for built-in sounds too. Dev1an detected velocities through touched finger size, which feels surprisingly ok after practice.
 - [x] Runtime global hotkey toggles:
-  - [x] on/off switch/global shortcut to avoid Midas touch,
-  - [x] absolute/relative modes for slider&mod xy,
-  - [x] auto reset for mod xy,
-  - [x] toggle between CC and Drum modes,
-  - [x] mouse lock/unlock and bring app to front.
+  - [x] toggle between CC and Drum modes **(Cmd+Shift+F7),**
+  - [x] mouse lock/unlock and bring app to front **(Cmd+Shift+F8),**
+  - [x] on/off switch/global shortcut to avoid Midas touch **(Cmd+Shift+F9),**
+  - [x] absolute/relative modes for slider&mod xy **(Cmd+Shift+F10 for PB, Cmd+Shift+F11 for Mod),**
+  - [x] auto reset for mod xy **(Cmd+Shift+F12)**.
 
 Ok, so I successfully replaced my janky and laggy TouchOSC setup with the integrated trackpad. One less device with battery to care about, no additional stands, almost instant response, super big=super precise controls. I'm happy.
 
