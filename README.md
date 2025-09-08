@@ -1,6 +1,6 @@
 <p align=center>Ever wondered what to do with this unnecessarily huge trackpad of yours?<br/> Turns out it's perfect for velocity-sensitive MIDI drum pads, CC's and more!</p>
 
-![drumpad](Art/drumpad.gif)
+https://github.com/user-attachments/assets/ae6cb475-0d78-4b82-80ac-f43aefdf63b4
 
 ## DISCLAIMER
 
