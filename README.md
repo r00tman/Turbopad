@@ -21,13 +21,21 @@ So far, I added
   - [x] on/off switch/global shortcut to avoid Midas touch **(Cmd+Shift+F9),**
   - [x] absolute/relative modes for slider&mod xy **(Cmd+Shift+F10 for PB, Cmd+Shift+F11 for Mod),**
   - [x] auto reset for mod xy **(Cmd+Shift+F12)**.
+- [x] Fix archiving (creating release bundle)
 
 Ok, so I successfully replaced my janky and laggy TouchOSC setup with the integrated trackpad. One less device with battery to care about, no additional stands, almost instant response, super big=super precise controls. I'm happy.
 
 I would love to see a page with MPE Linnstrument-like keys, they would be super fun to have. Maybe also refactor code so that it's user-configurable, not just through code?
 
 ## Installation
-I don't have GitHub releases yet, so please clone the repo, do `pod install`, open workspace in Xcode and compile. For some reason, it doesn't work with App Sandbox enabled, so turn it off, idk which entitlement it needs. Also turn off Build Settings->Sandbox user scripts, otherwise it won't build.
+I don't have GitHub releases yet, so please clone the repo, do `pod install`, open workspace in Xcode and compile. For some reason, it doesn't work with App Sandbox enabled, so I turned it off, idk which entitlement it needs. Also turn off Build Settings->Sandbox user scripts (if it is on), otherwise it won't build.
+
+For archiving (building release bundle) to work, install libarc files which were removed in Xcode 14.3 (needed for M5MultitouchSupport library, last updated 10 years ago in 2015):
+
+```bash
+git clone https://github.com/kamyarelyasi/Libarclite-Files.git
+sudo cp Libarclite-Files/*.a /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/arc/
+```
 
 ## Compatibility
 
