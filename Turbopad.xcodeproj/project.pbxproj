@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34A479661A3391876EE5082C /* Pods_Magic_DrumpadTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5110B88561F223B7A8ED9076 /* Pods_Magic_DrumpadTests.framework */; };
+		0316387F25B55BAFB5A83E3A /* Pods_TurbopadTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFECF7F51754F4B47BD5C5A /* Pods_TurbopadTests.framework */; };
 		74447AB11EF6AD7400C428B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74447AB01EF6AD7400C428B9 /* AppDelegate.swift */; };
 		74447AB31EF6AD7400C428B9 /* TrackpadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74447AB21EF6AD7400C428B9 /* TrackpadController.swift */; };
 		74447AB51EF6AD7400C428B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74447AB41EF6AD7400C428B9 /* Assets.xcassets */; };
@@ -26,8 +26,8 @@
 		7B2123782E6CE1E2004B1DF7 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7B2123772E6CE1E2004B1DF7 /* PrivacyInfo.xcprivacy */; };
 		7BDE737F2E75D9C200DFAC94 /* GuitarPageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE737E2E75D9C200DFAC94 /* GuitarPageHandler.swift */; };
 		7BDE73812E75E92500DFAC94 /* ThreadSafeDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE73802E75E92500DFAC94 /* ThreadSafeDictionary.swift */; };
-		8BE12B42D96141F9BB80B8CC /* Pods_Magic_Drumpad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B8E66CD33D715CFAEF272F /* Pods_Magic_Drumpad.framework */; };
-		96F747B3C1FBC9393B969F1F /* Pods_Magic_DrumpadUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40C7EFB97F26E6555F1C2A1 /* Pods_Magic_DrumpadUITests.framework */; };
+		8C0E7799B9D46DC1D904ED28 /* Pods_Turbopad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6ADCB483E94A97DCF159CDC /* Pods_Turbopad.framework */; };
+		D04F8803AE5CAFE42C6D50CA /* Pods_TurbopadUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9158DB80CEB365E5A4492B4 /* Pods_TurbopadUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,36 +36,37 @@
 			containerPortal = 74447AA51EF6AD7400C428B9 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 74447AAC1EF6AD7400C428B9;
-			remoteInfo = "Magic Drumpad";
+			remoteInfo = "Turbopad";
 		};
 		74447ACB1EF6AD7400C428B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 74447AA51EF6AD7400C428B9 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 74447AAC1EF6AD7400C428B9;
-			remoteInfo = "Magic Drumpad";
+			remoteInfo = "Turbopad";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		31837BF21C44FA7E2E513FF0 /* Pods-Magic Drumpad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic Drumpad.release.xcconfig"; path = "Pods/Target Support Files/Pods-Magic Drumpad/Pods-Magic Drumpad.release.xcconfig"; sourceTree = "<group>"; };
-		40B8E66CD33D715CFAEF272F /* Pods_Magic_Drumpad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Magic_Drumpad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5110B88561F223B7A8ED9076 /* Pods_Magic_DrumpadTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Magic_DrumpadTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0013CDBAF3E6E5E9BF1DE546 /* Pods-TurbopadTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TurbopadTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TurbopadTests/Pods-TurbopadTests.release.xcconfig"; sourceTree = "<group>"; };
+		11B6C9C824A892DB78522392 /* Pods-TurbopadUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TurbopadUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TurbopadUITests/Pods-TurbopadUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4FCC6E4E1F84F8FE9D246495 /* Pods-Turbopad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Turbopad.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Turbopad/Pods-Turbopad.debug.xcconfig"; sourceTree = "<group>"; };
+		4FFECF7F51754F4B47BD5C5A /* Pods_TurbopadTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TurbopadTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5542E743CB8118FB3F45BB91 /* Pods-Turbopad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Turbopad.release.xcconfig"; path = "Pods/Target Support Files/Pods-Turbopad/Pods-Turbopad.release.xcconfig"; sourceTree = "<group>"; };
 		741F36A21EF86BC800F65538 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		74447AAD1EF6AD7400C428B9 /* Magic Drumpad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Magic Drumpad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74447AAD1EF6AD7400C428B9 /* Turbopad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Turbopad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74447AB01EF6AD7400C428B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74447AB21EF6AD7400C428B9 /* TrackpadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackpadController.swift; sourceTree = "<group>"; };
 		74447AB41EF6AD7400C428B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74447AB71EF6AD7400C428B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74447AB91EF6AD7400C428B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74447ABF1EF6AD7400C428B9 /* Magic DrumpadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Magic DrumpadTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74447ABF1EF6AD7400C428B9 /* TurbopadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TurbopadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74447AC31EF6AD7400C428B9 /* Magic_DrumpadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magic_DrumpadTests.swift; sourceTree = "<group>"; };
 		74447AC51EF6AD7400C428B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74447ACA1EF6AD7400C428B9 /* Magic DrumpadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Magic DrumpadUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74447ACA1EF6AD7400C428B9 /* TurbopadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TurbopadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74447ACE1EF6AD7400C428B9 /* Magic_DrumpadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magic_DrumpadUITests.swift; sourceTree = "<group>"; };
 		74447AD01EF6AD7400C428B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7489205E1EF701800098ABDF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		74F120A31EFF11A6003C8C7E /* Magic Drumpad.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Magic Drumpad.entitlements"; sourceTree = "<group>"; };
 		74F187072115C5220070FB85 /* MidiSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiSender.swift; sourceTree = "<group>"; };
 		74F187092115EF780070FB85 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		7B21236B2E6CA971004B1DF7 /* PageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHandler.swift; sourceTree = "<group>"; };
@@ -75,14 +76,13 @@
 		7B2123732E6CC755004B1DF7 /* SliderBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderBox.swift; sourceTree = "<group>"; };
 		7B2123752E6CD4E5004B1DF7 /* XYBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYBox.swift; sourceTree = "<group>"; };
 		7B2123772E6CE1E2004B1DF7 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		7B95422B2E75F90700F06FD1 /* Turbopad.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Turbopad.entitlements; sourceTree = "<group>"; };
 		7BDE737E2E75D9C200DFAC94 /* GuitarPageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitarPageHandler.swift; sourceTree = "<group>"; };
 		7BDE73802E75E92500DFAC94 /* ThreadSafeDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeDictionary.swift; sourceTree = "<group>"; };
-		AA0C3D557A7BCC8B26189BDC /* Pods-Magic Drumpad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic Drumpad.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Magic Drumpad/Pods-Magic Drumpad.debug.xcconfig"; sourceTree = "<group>"; };
-		C6F5557768479E3B966A6EAE /* Pods-Magic DrumpadUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic DrumpadUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Magic DrumpadUITests/Pods-Magic DrumpadUITests.release.xcconfig"; sourceTree = "<group>"; };
-		DF45C29B2997CCE8EEDC8EFE /* Pods-Magic DrumpadTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic DrumpadTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Magic DrumpadTests/Pods-Magic DrumpadTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E01CE85E04CAE8449579C90C /* Pods-Magic DrumpadUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic DrumpadUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Magic DrumpadUITests/Pods-Magic DrumpadUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		F34DEE1298B7C9013D809616 /* Pods-Magic DrumpadTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic DrumpadTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Magic DrumpadTests/Pods-Magic DrumpadTests.release.xcconfig"; sourceTree = "<group>"; };
-		F40C7EFB97F26E6555F1C2A1 /* Pods_Magic_DrumpadUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Magic_DrumpadUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		843C571E80EEEF5BF356F2DB /* Pods-TurbopadTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TurbopadTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TurbopadTests/Pods-TurbopadTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A2C5A07DD564FDBE9F1257C5 /* Pods-TurbopadUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TurbopadUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TurbopadUITests/Pods-TurbopadUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B6ADCB483E94A97DCF159CDC /* Pods_Turbopad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Turbopad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9158DB80CEB365E5A4492B4 /* Pods_TurbopadUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TurbopadUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BE12B42D96141F9BB80B8CC /* Pods_Magic_Drumpad.framework in Frameworks */,
+				8C0E7799B9D46DC1D904ED28 /* Pods_Turbopad.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34A479661A3391876EE5082C /* Pods_Magic_DrumpadTests.framework in Frameworks */,
+				0316387F25B55BAFB5A83E3A /* Pods_TurbopadTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96F747B3C1FBC9393B969F1F /* Pods_Magic_DrumpadUITests.framework in Frameworks */,
+				D04F8803AE5CAFE42C6D50CA /* Pods_TurbopadUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,9 +116,9 @@
 		19579748F8F2949B113FC36C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				40B8E66CD33D715CFAEF272F /* Pods_Magic_Drumpad.framework */,
-				5110B88561F223B7A8ED9076 /* Pods_Magic_DrumpadTests.framework */,
-				F40C7EFB97F26E6555F1C2A1 /* Pods_Magic_DrumpadUITests.framework */,
+				B6ADCB483E94A97DCF159CDC /* Pods_Turbopad.framework */,
+				4FFECF7F51754F4B47BD5C5A /* Pods_TurbopadTests.framework */,
+				F9158DB80CEB365E5A4492B4 /* Pods_TurbopadUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,9 +127,9 @@
 			isa = PBXGroup;
 			children = (
 				741F36A21EF86BC800F65538 /* README.md */,
-				74447AAF1EF6AD7400C428B9 /* Magic Drumpad */,
-				74447AC21EF6AD7400C428B9 /* Magic DrumpadTests */,
-				74447ACD1EF6AD7400C428B9 /* Magic DrumpadUITests */,
+				74447AAF1EF6AD7400C428B9 /* Turbopad */,
+				74447AC21EF6AD7400C428B9 /* TurbopadTests */,
+				74447ACD1EF6AD7400C428B9 /* TurbopadUITests */,
 				74447AAE1EF6AD7400C428B9 /* Products */,
 				8373A68E4068AB2BF4531AC2 /* Pods */,
 				19579748F8F2949B113FC36C /* Frameworks */,
@@ -139,16 +139,17 @@
 		74447AAE1EF6AD7400C428B9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74447AAD1EF6AD7400C428B9 /* Magic Drumpad.app */,
-				74447ABF1EF6AD7400C428B9 /* Magic DrumpadTests.xctest */,
-				74447ACA1EF6AD7400C428B9 /* Magic DrumpadUITests.xctest */,
+				74447AAD1EF6AD7400C428B9 /* Turbopad.app */,
+				74447ABF1EF6AD7400C428B9 /* TurbopadTests.xctest */,
+				74447ACA1EF6AD7400C428B9 /* TurbopadUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		74447AAF1EF6AD7400C428B9 /* Magic Drumpad */ = {
+		74447AAF1EF6AD7400C428B9 /* Turbopad */ = {
 			isa = PBXGroup;
 			children = (
+				7B95422B2E75F90700F06FD1 /* Turbopad.entitlements */,
 				7BDE73802E75E92500DFAC94 /* ThreadSafeDictionary.swift */,
 				7B2123732E6CC755004B1DF7 /* SliderBox.swift */,
 				7B2123752E6CD4E5004B1DF7 /* XYBox.swift */,
@@ -157,7 +158,6 @@
 				7BDE737E2E75D9C200DFAC94 /* GuitarPageHandler.swift */,
 				7B21236D2E6CC347004B1DF7 /* Utils.swift */,
 				7B21236B2E6CA971004B1DF7 /* PageHandler.swift */,
-				74F120A31EFF11A6003C8C7E /* Magic Drumpad.entitlements */,
 				74447AB01EF6AD7400C428B9 /* AppDelegate.swift */,
 				74447AB21EF6AD7400C428B9 /* TrackpadController.swift */,
 				74F187092115EF780070FB85 /* SettingsController.swift */,
@@ -168,36 +168,36 @@
 				74447AB91EF6AD7400C428B9 /* Info.plist */,
 				7B2123772E6CE1E2004B1DF7 /* PrivacyInfo.xcprivacy */,
 			);
-			path = "Magic Drumpad";
+			path = Turbopad;
 			sourceTree = "<group>";
 		};
-		74447AC21EF6AD7400C428B9 /* Magic DrumpadTests */ = {
+		74447AC21EF6AD7400C428B9 /* TurbopadTests */ = {
 			isa = PBXGroup;
 			children = (
 				74447AC31EF6AD7400C428B9 /* Magic_DrumpadTests.swift */,
 				74447AC51EF6AD7400C428B9 /* Info.plist */,
 			);
-			path = "Magic DrumpadTests";
+			path = TurbopadTests;
 			sourceTree = "<group>";
 		};
-		74447ACD1EF6AD7400C428B9 /* Magic DrumpadUITests */ = {
+		74447ACD1EF6AD7400C428B9 /* TurbopadUITests */ = {
 			isa = PBXGroup;
 			children = (
 				74447ACE1EF6AD7400C428B9 /* Magic_DrumpadUITests.swift */,
 				74447AD01EF6AD7400C428B9 /* Info.plist */,
 			);
-			path = "Magic DrumpadUITests";
+			path = TurbopadUITests;
 			sourceTree = "<group>";
 		};
 		8373A68E4068AB2BF4531AC2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AA0C3D557A7BCC8B26189BDC /* Pods-Magic Drumpad.debug.xcconfig */,
-				31837BF21C44FA7E2E513FF0 /* Pods-Magic Drumpad.release.xcconfig */,
-				DF45C29B2997CCE8EEDC8EFE /* Pods-Magic DrumpadTests.debug.xcconfig */,
-				F34DEE1298B7C9013D809616 /* Pods-Magic DrumpadTests.release.xcconfig */,
-				E01CE85E04CAE8449579C90C /* Pods-Magic DrumpadUITests.debug.xcconfig */,
-				C6F5557768479E3B966A6EAE /* Pods-Magic DrumpadUITests.release.xcconfig */,
+				4FCC6E4E1F84F8FE9D246495 /* Pods-Turbopad.debug.xcconfig */,
+				5542E743CB8118FB3F45BB91 /* Pods-Turbopad.release.xcconfig */,
+				843C571E80EEEF5BF356F2DB /* Pods-TurbopadTests.debug.xcconfig */,
+				0013CDBAF3E6E5E9BF1DE546 /* Pods-TurbopadTests.release.xcconfig */,
+				11B6C9C824A892DB78522392 /* Pods-TurbopadUITests.debug.xcconfig */,
+				A2C5A07DD564FDBE9F1257C5 /* Pods-TurbopadUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -205,9 +205,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		74447AAC1EF6AD7400C428B9 /* Magic Drumpad */ = {
+		74447AAC1EF6AD7400C428B9 /* Turbopad */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74447AD31EF6AD7400C428B9 /* Build configuration list for PBXNativeTarget "Magic Drumpad" */;
+			buildConfigurationList = 74447AD31EF6AD7400C428B9 /* Build configuration list for PBXNativeTarget "Turbopad" */;
 			buildPhases = (
 				014C2570122D3AF107253890 /* [CP] Check Pods Manifest.lock */,
 				74447AA91EF6AD7400C428B9 /* Sources */,
@@ -219,14 +219,14 @@
 			);
 			dependencies = (
 			);
-			name = "Magic Drumpad";
-			productName = "Magic Drumpad";
-			productReference = 74447AAD1EF6AD7400C428B9 /* Magic Drumpad.app */;
+			name = Turbopad;
+			productName = "Turbopad";
+			productReference = 74447AAD1EF6AD7400C428B9 /* Turbopad.app */;
 			productType = "com.apple.product-type.application";
 		};
-		74447ABE1EF6AD7400C428B9 /* Magic DrumpadTests */ = {
+		74447ABE1EF6AD7400C428B9 /* TurbopadTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74447AD61EF6AD7400C428B9 /* Build configuration list for PBXNativeTarget "Magic DrumpadTests" */;
+			buildConfigurationList = 74447AD61EF6AD7400C428B9 /* Build configuration list for PBXNativeTarget "TurbopadTests" */;
 			buildPhases = (
 				BF779AA0A07080E428ED830B /* [CP] Check Pods Manifest.lock */,
 				74447ABB1EF6AD7400C428B9 /* Sources */,
@@ -238,14 +238,14 @@
 			dependencies = (
 				74447AC11EF6AD7400C428B9 /* PBXTargetDependency */,
 			);
-			name = "Magic DrumpadTests";
-			productName = "Magic DrumpadTests";
-			productReference = 74447ABF1EF6AD7400C428B9 /* Magic DrumpadTests.xctest */;
+			name = TurbopadTests;
+			productName = "TurbopadTests";
+			productReference = 74447ABF1EF6AD7400C428B9 /* TurbopadTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		74447AC91EF6AD7400C428B9 /* Magic DrumpadUITests */ = {
+		74447AC91EF6AD7400C428B9 /* TurbopadUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 74447AD91EF6AD7400C428B9 /* Build configuration list for PBXNativeTarget "Magic DrumpadUITests" */;
+			buildConfigurationList = 74447AD91EF6AD7400C428B9 /* Build configuration list for PBXNativeTarget "TurbopadUITests" */;
 			buildPhases = (
 				DCE7C8EB1563E0F0C3F8963A /* [CP] Check Pods Manifest.lock */,
 				74447AC61EF6AD7400C428B9 /* Sources */,
@@ -257,9 +257,9 @@
 			dependencies = (
 				74447ACC1EF6AD7400C428B9 /* PBXTargetDependency */,
 			);
-			name = "Magic DrumpadUITests";
-			productName = "Magic DrumpadUITests";
-			productReference = 74447ACA1EF6AD7400C428B9 /* Magic DrumpadUITests.xctest */;
+			name = TurbopadUITests;
+			productName = "TurbopadUITests";
+			productReference = 74447ACA1EF6AD7400C428B9 /* TurbopadUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -297,7 +297,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 74447AA81EF6AD7400C428B9 /* Build configuration list for PBXProject "Magic Drumpad" */;
+			buildConfigurationList = 74447AA81EF6AD7400C428B9 /* Build configuration list for PBXProject "Turbopad" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -310,9 +310,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				74447AAC1EF6AD7400C428B9 /* Magic Drumpad */,
-				74447ABE1EF6AD7400C428B9 /* Magic DrumpadTests */,
-				74447AC91EF6AD7400C428B9 /* Magic DrumpadUITests */,
+				74447AAC1EF6AD7400C428B9 /* Turbopad */,
+				74447ABE1EF6AD7400C428B9 /* TurbopadTests */,
+				74447AC91EF6AD7400C428B9 /* TurbopadUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -356,7 +356,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Magic Drumpad-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Turbopad-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -369,7 +369,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Magic Drumpad/Pods-Magic Drumpad-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Turbopad/Pods-Turbopad-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/HotKey/HotKey.framework",
 				"${BUILT_PRODUCTS_DIR}/M5MultitouchSupport/M5MultitouchSupport.framework",
 			);
@@ -380,7 +380,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Magic Drumpad/Pods-Magic Drumpad-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Turbopad/Pods-Turbopad-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF779AA0A07080E428ED830B /* [CP] Check Pods Manifest.lock */ = {
@@ -394,7 +394,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Magic DrumpadTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TurbopadTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -412,7 +412,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Magic DrumpadUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-TurbopadUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -463,12 +463,12 @@
 /* Begin PBXTargetDependency section */
 		74447AC11EF6AD7400C428B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 74447AAC1EF6AD7400C428B9 /* Magic Drumpad */;
+			target = 74447AAC1EF6AD7400C428B9 /* Turbopad */;
 			targetProxy = 74447AC01EF6AD7400C428B9 /* PBXContainerItemProxy */;
 		};
 		74447ACC1EF6AD7400C428B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 74447AAC1EF6AD7400C428B9 /* Magic Drumpad */;
+			target = 74447AAC1EF6AD7400C428B9 /* Turbopad */;
 			targetProxy = 74447ACB1EF6AD7400C428B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -604,22 +604,23 @@
 		};
 		74447AD41EF6AD7400C428B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA0C3D557A7BCC8B26189BDC /* Pods-Magic Drumpad.debug.xcconfig */;
+			baseConfigurationReference = 4FCC6E4E1F84F8FE9D246495 /* Pods-Turbopad.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Magic Drumpad/Magic Drumpad.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Turbopad/Turbopad.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = Q7F46TQMX7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				INFOPLIST_FILE = "Magic Drumpad/Info.plist";
+				INFOPLIST_FILE = Turbopad/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Turbopad;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.r00tman.Magic-Drumpad";
+				PRODUCT_BUNDLE_IDENTIFIER = com.r00tman.Turbopad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -630,22 +631,23 @@
 		};
 		74447AD51EF6AD7400C428B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31837BF21C44FA7E2E513FF0 /* Pods-Magic Drumpad.release.xcconfig */;
+			baseConfigurationReference = 5542E743CB8118FB3F45BB91 /* Pods-Turbopad.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Magic Drumpad/Magic Drumpad.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Turbopad/Turbopad.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = Q7F46TQMX7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				INFOPLIST_FILE = "Magic Drumpad/Info.plist";
+				INFOPLIST_FILE = Turbopad/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Turbopad;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.r00tman.Magic-Drumpad";
+				PRODUCT_BUNDLE_IDENTIFIER = com.r00tman.Turbopad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
@@ -654,98 +656,98 @@
 		};
 		74447AD71EF6AD7400C428B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF45C29B2997CCE8EEDC8EFE /* Pods-Magic DrumpadTests.debug.xcconfig */;
+			baseConfigurationReference = 843C571E80EEEF5BF356F2DB /* Pods-TurbopadTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = Q7F46TQMX7;
-				INFOPLIST_FILE = "Magic DrumpadTests/Info.plist";
+				INFOPLIST_FILE = TurbopadTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.r00tman.Magic-DrumpadTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.r00tman.TurbopadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Magic Drumpad.app/Contents/MacOS/Magic Drumpad";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Turbopad.app/Contents/MacOS/Turbopad";
 			};
 			name = Debug;
 		};
 		74447AD81EF6AD7400C428B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F34DEE1298B7C9013D809616 /* Pods-Magic DrumpadTests.release.xcconfig */;
+			baseConfigurationReference = 0013CDBAF3E6E5E9BF1DE546 /* Pods-TurbopadTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = Q7F46TQMX7;
-				INFOPLIST_FILE = "Magic DrumpadTests/Info.plist";
+				INFOPLIST_FILE = TurbopadTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.r00tman.Magic-DrumpadTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.r00tman.TurbopadTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Magic Drumpad.app/Contents/MacOS/Magic Drumpad";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Turbopad.app/Contents/MacOS/Turbopad";
 			};
 			name = Release;
 		};
 		74447ADA1EF6AD7400C428B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E01CE85E04CAE8449579C90C /* Pods-Magic DrumpadUITests.debug.xcconfig */;
+			baseConfigurationReference = 11B6C9C824A892DB78522392 /* Pods-TurbopadUITests.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = Q7F46TQMX7;
-				INFOPLIST_FILE = "Magic DrumpadUITests/Info.plist";
+				INFOPLIST_FILE = TurbopadUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.r00tman.Magic-DrumpadUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.r00tman.TurbopadUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
-				TEST_TARGET_NAME = "Magic Drumpad";
+				TEST_TARGET_NAME = Turbopad;
 			};
 			name = Debug;
 		};
 		74447ADB1EF6AD7400C428B9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6F5557768479E3B966A6EAE /* Pods-Magic DrumpadUITests.release.xcconfig */;
+			baseConfigurationReference = A2C5A07DD564FDBE9F1257C5 /* Pods-TurbopadUITests.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = Q7F46TQMX7;
-				INFOPLIST_FILE = "Magic DrumpadUITests/Info.plist";
+				INFOPLIST_FILE = TurbopadUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.r00tman.Magic-DrumpadUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.r00tman.TurbopadUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
-				TEST_TARGET_NAME = "Magic Drumpad";
+				TEST_TARGET_NAME = Turbopad;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		74447AA81EF6AD7400C428B9 /* Build configuration list for PBXProject "Magic Drumpad" */ = {
+		74447AA81EF6AD7400C428B9 /* Build configuration list for PBXProject "Turbopad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74447AD11EF6AD7400C428B9 /* Debug */,
@@ -754,7 +756,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74447AD31EF6AD7400C428B9 /* Build configuration list for PBXNativeTarget "Magic Drumpad" */ = {
+		74447AD31EF6AD7400C428B9 /* Build configuration list for PBXNativeTarget "Turbopad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74447AD41EF6AD7400C428B9 /* Debug */,
@@ -763,7 +765,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74447AD61EF6AD7400C428B9 /* Build configuration list for PBXNativeTarget "Magic DrumpadTests" */ = {
+		74447AD61EF6AD7400C428B9 /* Build configuration list for PBXNativeTarget "TurbopadTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74447AD71EF6AD7400C428B9 /* Debug */,
@@ -772,7 +774,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		74447AD91EF6AD7400C428B9 /* Build configuration list for PBXNativeTarget "Magic DrumpadUITests" */ = {
+		74447AD91EF6AD7400C428B9 /* Build configuration list for PBXNativeTarget "TurbopadUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				74447ADA1EF6AD7400C428B9 /* Debug */,

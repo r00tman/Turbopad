@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Magic Drumpad
+//  Turbopad
 //
 //  Created by Damiaan on 18/06/17.
 //  Copyright © 2017 Damiaan Dufaux. All rights reserved.

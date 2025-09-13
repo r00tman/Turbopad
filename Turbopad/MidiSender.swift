@@ -1,6 +1,6 @@
 //
 //  MidiSender.swift
-//  Magic Drumpad
+//  Turbopad
 //
 //  Created by Damiaan on 4/08/18.
 //  Copyright © 2018 Damiaan Dufaux. All rights reserved.

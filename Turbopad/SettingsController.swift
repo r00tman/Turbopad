@@ -1,6 +1,6 @@
 //
 //  SettingsController.swift
-//  Magic Drumpad
+//  Turbopad
 //
 //  Created by Damiaan on 4/08/18.
 //  Copyright © 2018 Damiaan Dufaux. All rights reserved.
@@ -22,7 +22,7 @@ let soundDrummers = [
 	SoundPlayer(withSound: NSDataAsset(name: .init("drum2"))!.data),
 	SoundPlayer(withSound: NSDataAsset(name: .init("drum2"))!.data),
 ]
-let midiSender = try! MidiSender(name: "Magic Drumpad")
+let midiSender = try! MidiSender(name: "Turbopad")
 let midiDrummers = [
     MidiPlayer(note: 36, sender: midiSender),
     MidiPlayer(note: 40, sender: midiSender),

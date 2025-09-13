@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Magic Drumpad.xcodeproj">
+      location = "self:Turbopad.xcodeproj">
    </FileRef>
 </Workspace>

@@ -13,11 +13,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="Magic Drumpad" id="1Xt-HY-uBw">
+                            <menuItem title="Turbopad" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Magic Drumpad" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Turbopad" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About Magic Drumpad" id="5kV-Vb-QxS">
+                                        <menuItem title="About Turbopad" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -35,7 +35,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide Magic Drumpad" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide Turbopad" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -53,7 +53,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit Magic Drumpad" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit Turbopad" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -648,7 +648,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="Magic Drumpad Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="Turbopad Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -672,7 +672,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Drumpad" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
+                    <window key="window" title="Turbopad" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -759,7 +759,7 @@
                             <customView ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AsH-r2-XoV">
                                 <rect key="frame" x="128" y="77" width="225" height="130"/>
                                 <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rkn-dc-XUe">
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rkn-dc-XUe">
                                         <rect key="frame" x="20" y="69" width="185" height="41"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="DISABLED" drawsBackground="YES" id="Wbb-68-Kqa">
                                             <font key="font" metaFont="systemBlack" size="35"/>
@@ -767,7 +767,7 @@
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEs-El-BCQ">
+                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEs-El-BCQ">
                                         <rect key="frame" x="-19" y="20" width="263" height="41"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Cmd+Shift+F9 to toggle" drawsBackground="YES" id="2Gh-Ic-7Zb">
                                             <font key="font" metaFont="systemBlack" size="21"/>
@@ -783,7 +783,7 @@
                                     <constraint firstItem="Rkn-dc-XUe" firstAttribute="leading" secondItem="AsH-r2-XoV" secondAttribute="leading" constant="20" symbolic="YES" id="fUz-mc-Uxh"/>
                                 </constraints>
                             </customView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qsz-Ay-Vy1">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qsz-Ay-Vy1">
                                 <rect key="frame" x="221" y="127" width="76" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="StatusLabel" id="BIs-U8-PMu">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -857,7 +857,7 @@
                                     <action selector="changeOutput:" target="a11-kg-Xol" id="W4y-oT-lxL"/>
                                 </connections>
                             </button>
-                            <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SBT-9C-7Fb">
+                            <comboBox focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SBT-9C-7Fb">
                                 <rect key="frame" x="19" y="40" width="128" height="23"/>
                                 <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="No2-0v-7NT">
                                     <font key="font" metaFont="system"/>

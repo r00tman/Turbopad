@@ -1,6 +1,6 @@
 //
 //  Magic_DrumpadUITests.swift
-//  Magic DrumpadUITests
+//  TurbopadUITests
 //
 //  Created by Damiaan on 18/06/17.
 //  Copyright © 2017 Damiaan Dufaux. All rights reserved.
