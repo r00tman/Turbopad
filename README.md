@@ -2,6 +2,8 @@
 
 https://github.com/user-attachments/assets/ae6cb475-0d78-4b82-80ac-f43aefdf63b4
 
+<img width="2219" height="595" alt="Image" src="https://github.com/user-attachments/assets/bbb5a886-3e56-4579-812c-a8da6016f191" />
+
 ## DISCLAIMER
 
 Today I started this repo. And also today I learned that there is already [Audioswift](https://audioswiftapp.com/), thanks Google. I have neither bought it, nor ever tried it, nor even downloaded it. But it seems to do quite similar things, so please **CONSIDER BUYING AUDIOSWIFT INSTEAD OF USING THIS REPO**, as I am 100% sure that it is **MUCH MORE POLISHED** than the current state of this repo and that AudioSwift's developer will be **MUCH HAPPIER** too if you do. I'll continue developing this repo anyway, as I want to play around with this idea myself, with the max level of control and customization possible, i.e., with direct access to my source code.
