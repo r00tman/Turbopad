@@ -24,6 +24,8 @@
 		7B2123742E6CC75D004B1DF7 /* SliderBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2123732E6CC755004B1DF7 /* SliderBox.swift */; };
 		7B2123762E6CD4E9004B1DF7 /* XYBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2123752E6CD4E5004B1DF7 /* XYBox.swift */; };
 		7B2123782E6CE1E2004B1DF7 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7B2123772E6CE1E2004B1DF7 /* PrivacyInfo.xcprivacy */; };
+		7BDE737F2E75D9C200DFAC94 /* GuitarPageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE737E2E75D9C200DFAC94 /* GuitarPageHandler.swift */; };
+		7BDE73812E75E92500DFAC94 /* ThreadSafeDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE73802E75E92500DFAC94 /* ThreadSafeDictionary.swift */; };
 		8BE12B42D96141F9BB80B8CC /* Pods_Magic_Drumpad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B8E66CD33D715CFAEF272F /* Pods_Magic_Drumpad.framework */; };
 		96F747B3C1FBC9393B969F1F /* Pods_Magic_DrumpadUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F40C7EFB97F26E6555F1C2A1 /* Pods_Magic_DrumpadUITests.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +75,8 @@
 		7B2123732E6CC755004B1DF7 /* SliderBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderBox.swift; sourceTree = "<group>"; };
 		7B2123752E6CD4E5004B1DF7 /* XYBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYBox.swift; sourceTree = "<group>"; };
 		7B2123772E6CE1E2004B1DF7 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		7BDE737E2E75D9C200DFAC94 /* GuitarPageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuitarPageHandler.swift; sourceTree = "<group>"; };
+		7BDE73802E75E92500DFAC94 /* ThreadSafeDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeDictionary.swift; sourceTree = "<group>"; };
 		AA0C3D557A7BCC8B26189BDC /* Pods-Magic Drumpad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic Drumpad.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Magic Drumpad/Pods-Magic Drumpad.debug.xcconfig"; sourceTree = "<group>"; };
 		C6F5557768479E3B966A6EAE /* Pods-Magic DrumpadUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic DrumpadUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Magic DrumpadUITests/Pods-Magic DrumpadUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DF45C29B2997CCE8EEDC8EFE /* Pods-Magic DrumpadTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Magic DrumpadTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Magic DrumpadTests/Pods-Magic DrumpadTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,10 +149,12 @@
 		74447AAF1EF6AD7400C428B9 /* Magic Drumpad */ = {
 			isa = PBXGroup;
 			children = (
+				7BDE73802E75E92500DFAC94 /* ThreadSafeDictionary.swift */,
 				7B2123732E6CC755004B1DF7 /* SliderBox.swift */,
 				7B2123752E6CD4E5004B1DF7 /* XYBox.swift */,
 				7B2123712E6CC3DB004B1DF7 /* CCPageHandler.swift */,
 				7B21236F2E6CC373004B1DF7 /* PadPageHandler.swift */,
+				7BDE737E2E75D9C200DFAC94 /* GuitarPageHandler.swift */,
 				7B21236D2E6CC347004B1DF7 /* Utils.swift */,
 				7B21236B2E6CA971004B1DF7 /* PageHandler.swift */,
 				74F120A31EFF11A6003C8C7E /* Magic Drumpad.entitlements */,
@@ -422,11 +428,13 @@
 			files = (
 				7489205F1EF701800098ABDF /* Player.swift in Sources */,
 				74F1870A2115EF780070FB85 /* SettingsController.swift in Sources */,
+				7BDE73812E75E92500DFAC94 /* ThreadSafeDictionary.swift in Sources */,
 				74447AB31EF6AD7400C428B9 /* TrackpadController.swift in Sources */,
 				7B21236E2E6CC352004B1DF7 /* Utils.swift in Sources */,
 				7B2123722E6CC3E6004B1DF7 /* CCPageHandler.swift in Sources */,
 				74447AB11EF6AD7400C428B9 /* AppDelegate.swift in Sources */,
 				7B2123702E6CC376004B1DF7 /* PadPageHandler.swift in Sources */,
+				7BDE737F2E75D9C200DFAC94 /* GuitarPageHandler.swift in Sources */,
 				74F187082115C5220070FB85 /* MidiSender.swift in Sources */,
 				7B2123742E6CC75D004B1DF7 /* SliderBox.swift in Sources */,
 				7B21236C2E6CA977004B1DF7 /* PageHandler.swift in Sources */,

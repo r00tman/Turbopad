@@ -157,7 +157,11 @@ class TrackpadController: NSViewController {
 				self.pageHandler?.setup(container: self.page_view)
 			}
 		case .guitar:
-			self.page_view.subviews.removeAll();
+			if !(self.pageHandler is GuitarPageHandler) {
+				self.pageHandler = GuitarPageHandler()
+				self.page_view.subviews.removeAll();
+				self.pageHandler?.setup(container: self.page_view)
+			}
 		}
 		disabledLabel.isHidden = !isDisabled
 		self.updateStatus()
