@@ -38,7 +38,14 @@ let midiDrummers = [
 	MidiPlayer(note: 51, sender: midiSender),
 ]
 var drummers: [Player] = midiDrummers
-var ccMode = false;
+
+enum PadMode: String, CaseIterable {
+	case drums = "Drums"
+	case cc = "CC"
+	case guitar = "Guitar"
+}
+
+var padMode = PadMode.drums;
 var midiMode = false;
 
 extension Notification.Name {
@@ -47,7 +54,7 @@ extension Notification.Name {
 
 func loadSettings() {
 	// Load settings from UserDefaults or your model
-	ccMode = UserDefaults.standard.bool(forKey: "ccMode")
+	padMode = PadMode(rawValue: UserDefaults.standard.string(forKey: "padMode") ?? PadMode.drums.rawValue) ?? PadMode.drums
 	
 	midiMode = UserDefaults.standard.bool(forKey: "midiMode")
 	if midiMode {
@@ -71,23 +78,25 @@ func setMidiMode(value: Bool) {
 	NotificationCenter.default.post(name: .settingsDidChange, object: nil)
 }
 
-func setCCMode(value: Bool) {
-	ccMode = value
-	UserDefaults.standard.set(ccMode, forKey: "ccMode")
+func setPadMode(value: PadMode) {
+	padMode = value
+	UserDefaults.standard.set(padMode.rawValue, forKey: "padMode")
 	NotificationCenter.default.post(name: .settingsDidChange, object: nil)
 }
 
 class SettingsController: NSViewController {
 	@IBOutlet weak var midiSwitch: NSButton!
-	@IBOutlet weak var ccSwitch: NSButton!
+	@IBOutlet weak var modeCombo: NSComboBox!
 
 	func updateSwitches() {
 		midiSwitch.state = if (midiMode) { .on } else { .off }
-		ccSwitch.state = if (ccMode) { .on } else { .off }
+		modeCombo.stringValue = padMode.rawValue
 	}
 	
 	override func viewWillAppear() {
 		super.viewWillAppear()
+		modeCombo.removeAllItems()
+		modeCombo.addItems(withObjectValues: PadMode.allCases.map { $0.rawValue })
 		loadSettings()
 		updateSwitches()
 	}
@@ -96,9 +105,13 @@ class SettingsController: NSViewController {
 		if sender == midiSwitch {
 			setMidiMode(value: sender.state == .on)
 		}
-		if sender == ccSwitch {
-			setCCMode(value: ccSwitch.state == .on)
-		}
+
 	}
 	
+	@IBAction func changeMode(_ sender: NSComboBox) {
+		let selectedString = modeCombo.stringValue;
+		if let val = PadMode(rawValue: selectedString) {
+			setPadMode(value: val)
+		}
+	}
 }

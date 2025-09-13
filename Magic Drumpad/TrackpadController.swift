@@ -69,11 +69,16 @@ class TrackpadController: NSViewController {
 		})
 		
 		hotKeyMode = HotKey(key: .f7, modifiers: [.command, .shift], keyDownHandler: {
-			setCCMode(value: !ccMode)
+			let modes = PadMode.allCases
+			let idx = modes.firstIndex(of: padMode)!
+			let nextIdx = (idx+1) % modes.count
+			let nextMode = modes[nextIdx]
+			
+			setPadMode(value: nextMode)
 		})
 		
 		hotKeyPBAbs = HotKey(key: .f10, modifiers: [.command, .shift], keyDownHandler: {
-			if !ccMode {
+			if padMode != .cc {
 				return;
 			}
 			let cch = self.pageHandler as! CCPageHandler?
@@ -82,7 +87,7 @@ class TrackpadController: NSViewController {
 		})
 		
 		hotKeyXYAbs = HotKey(key: .f11, modifiers: [.command, .shift], keyDownHandler: {
-			if !ccMode {
+			if padMode != .cc {
 				return;
 			}
 			let cch = self.pageHandler as! CCPageHandler?
@@ -91,7 +96,7 @@ class TrackpadController: NSViewController {
 		})
 		
 		hotKeyXYReset = HotKey(key: .f12, modifiers: [.command, .shift], keyDownHandler: {
-			if !ccMode {
+			if padMode != .cc {
 				return;
 			}
 			let cch = self.pageHandler as! CCPageHandler?
@@ -105,7 +110,8 @@ class TrackpadController: NSViewController {
 	
 	func updateStatus() {
 		var res = ""
-		if ccMode {
+		switch padMode {
+		case .cc:
 			res += "CC Mode"
 			
 			let cch = pageHandler as! CCPageHandler?;
@@ -127,26 +133,31 @@ class TrackpadController: NSViewController {
 			} else {
 				res += " | Mod XY Auto Reset OFF"
 			}
-		} else {
+		case .drums:
 			res += "Pad Mode"
+		case .guitar:
+			res += "Guitar Mode"
 		}
 		
 		statusLabel.stringValue = res
 	}
 
 	@objc func updateUI() {
-		if ccMode {
+		switch padMode {
+		case .cc:
 			if !(self.pageHandler is CCPageHandler) {
 				self.pageHandler = CCPageHandler()
 				self.page_view.subviews.removeAll();
 				self.pageHandler?.setup(container: self.page_view)
 			}
-		} else {
+		case .drums:
 			if !(self.pageHandler is PadPageHandler) {
 				self.pageHandler = PadPageHandler()
 				self.page_view.subviews.removeAll();
 				self.pageHandler?.setup(container: self.page_view)
 			}
+		case .guitar:
+			self.page_view.subviews.removeAll();
 		}
 		disabledLabel.isHidden = !isDisabled
 		self.updateStatus()
