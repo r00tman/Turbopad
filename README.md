@@ -25,7 +25,7 @@ So far, I added
 - [x] Guitar mode with slide support:
   - [x] discrete slide mode (note off old note, note on new note)
   - [x] global slide mode (pitch bend the entire channel if finger moved enough)
-  - [x] per-note slide pitch bend support (MPE) -- **needs testing**
+  - [x] per-note slide pitch bend support (MPE)
 
 Ok, so I successfully replaced my janky and laggy TouchOSC setup with the integrated trackpad. One less device with battery to care about, no additional stands, almost instant response, super big=super precise controls. I'm happy.
 

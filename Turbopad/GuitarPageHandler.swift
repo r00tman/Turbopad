@@ -122,6 +122,16 @@ class GuitarPageHandler: PageHandler {
 	var mpeChannelNoteCnt: [Int] = Array(repeating: 0, count: 16);
 	private let mpeChannelQueue = DispatchQueue(label: "MPE Channel Queue",
 												attributes: .concurrent)
+	
+	// MIDI PB is assumed to be within -12 to +12 semitones
+	// -48 to +48 semitones for MPE
+	var minPB: Float {
+		get { if mpeMode { -48.0 } else { -12.0 } }
+	}
+	var maxPB: Float {
+		get { if mpeMode { 48.0 } else { 12.0 } }
+	}
+
 
 	func findFreeMPEChannel() -> UInt8? {
 		return mpeChannelQueue.sync {
@@ -192,9 +202,6 @@ class GuitarPageHandler: PageHandler {
 			let newNote = midiNote(at: boxIdx)
 			
 			if pbMode {
-				// MIDI PB is assumed to be within -12 to +12 semitones
-				let minPB: Float = -12.0;
-				let maxPB: Float = 12.0;
 				let diff = (touch.posX - origTouchX);
 				let diffSemis = diff / Float(self.gridData[boxIdx].0.width);
 				let pbPercent = (diffSemis-minPB)/(maxPB-minPB); // 0 to 1, 0=minPB, 1=maxPB
