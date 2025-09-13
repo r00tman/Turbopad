@@ -1,4 +1,4 @@
-<p align=center>Ever wondered what to do with this unnecessarily huge trackpad of yours?<br/> Turns out it's perfect for velocity-sensitive MIDI drum pads, CC's and more!</p>
+<p align=center>Ever wondered what to do with this unnecessarily huge trackpad of yours?<br/> Turns out it's perfect for velocity-sensitive MIDI drum pads, CC's, guitars and more!</p>
 
 https://github.com/user-attachments/assets/ae6cb475-0d78-4b82-80ac-f43aefdf63b4
 
@@ -16,16 +16,22 @@ So far, I added
 - [x] Window resizing support
 - [x] Velocity sensitivity not only for MIDI but for built-in sounds too. Dev1an detected velocities through touched finger size, which feels surprisingly ok after practice.
 - [x] Runtime global hotkey toggles:
-  - [x] toggle between CC and Drum modes **(Cmd+Shift+F7),**
+  - [x] toggle between CC, Drum, and Guitar modes **(Cmd+Shift+F7),**
   - [x] mouse lock/unlock and bring app to front **(Cmd+Shift+F8),**
   - [x] on/off switch/global shortcut to avoid Midas touch **(Cmd+Shift+F9),**
   - [x] absolute/relative modes for slider&mod xy **(Cmd+Shift+F10 for PB, Cmd+Shift+F11 for Mod),**
   - [x] auto reset for mod xy **(Cmd+Shift+F12)**.
 - [x] Fix archiving (creating release bundle)
+- [x] Guitar mode with slide support:
+  - [x] discrete slide mode (note off old note, note on new note)
+  - [x] global slide mode (pitch bend the entire channel if finger moved enough)
+  - [ ] per-note slide pitch bend support (MPE) -- **TODO**
 
 Ok, so I successfully replaced my janky and laggy TouchOSC setup with the integrated trackpad. One less device with battery to care about, no additional stands, almost instant response, super big=super precise controls. I'm happy.
 
-I would love to see a page with MPE Linnstrument-like keys, they would be super fun to have. Maybe also refactor code so that it's user-configurable, not just through code?
+I'm currently working on adding MPE support to guitar mode. I would love to refactor code so that it's more user-configurable, not just through code, e.g.,
+ - guitar mode settings (base note, slide mode, no of strings/frets, etc),
+ - drum pad layout and assignments?
 
 ## Installation
 I don't have GitHub releases yet, so please clone the repo, do `pod install`, open workspace in Xcode and compile. For some reason, it doesn't work with App Sandbox enabled, so I turned it off, idk which entitlement it needs. Also turn off Build Settings->Sandbox user scripts (if it is on), otherwise it won't build.
