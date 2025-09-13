@@ -112,6 +112,47 @@ class GuitarPageHandler: PageHandler {
 	var touchesToNotes = ThreadSafeDictionary<Int32, (note: UInt8, touchX: Float, touchY: Float)>();
 	var isPBing = Set<Int32>();
 	
+	var midiChannel: UInt8 = 0;
+	
+	var mpeMode = true; // use MPE (allocate new MIDI channel for each touch)
+	var pbMode = true; // true - use pitch-bend, false - note off old note, note on new note
+	var touchesToMPEChannels = ThreadSafeDictionary<Int32, UInt8>();
+	let MPE_GLOBAL_CH: UInt8 = 0;
+	let MPE_MEMBER_CH: [UInt8] = Array(1...15);
+	var mpeChannelNoteCnt: [Int] = Array(repeating: 0, count: 16);
+	private let mpeChannelQueue = DispatchQueue(label: "MPE Channel Queue",
+												attributes: .concurrent)
+
+	func findFreeMPEChannel() -> UInt8? {
+		return mpeChannelQueue.sync {
+			for ch in MPE_MEMBER_CH {
+				if mpeChannelNoteCnt[Int(ch)] == 0 {
+					return ch
+				}
+			}
+			return nil
+		}
+	}
+	
+	func allocMPEChannel() -> UInt8? {
+		return mpeChannelQueue.sync {
+			for ch in MPE_MEMBER_CH {
+				if mpeChannelNoteCnt[Int(ch)] == 0 {
+					mpeChannelNoteCnt[Int(ch)] += 1;
+					return ch
+				}
+			}
+			return nil
+		}
+	}
+	
+	func freeMPEChannel(_ ch: UInt8) {
+		return mpeChannelQueue.sync {
+			assert(mpeChannelNoteCnt[Int(ch)] == 1);
+			mpeChannelNoteCnt[Int(ch)] -= 1;
+		}
+	}
+	
 	func touchBegan(touch: M5MultitouchTouch) {
 		let size = min(touch.size, 2.5) / 2.5
 		let boxIdx = box(at: (touch.posX, touch.posY))
@@ -119,8 +160,17 @@ class GuitarPageHandler: PageHandler {
 			return;
 		}
 		let note = midiNote(at: boxIdx)
+		
+		let ch: UInt8 = if mpeMode {
+			allocMPEChannel()!
+		} else {
+			midiChannel
+		}
+		
 		touchesToNotes[touch.identifier] = (note: note, touchX: touch.posX, touchY: touch.posY);
-		try! midiSender.sendNoteOnMessage(noteNumber: note, velocity: UInt8(size*127))
+		touchesToMPEChannels[touch.identifier] = ch;
+		
+		try! midiSender.sendNoteOnMessage(noteNumber: note, velocity: UInt8(size*127), channel: ch)
 		DispatchQueue.main.async {
 			self.boxes[boxIdx].layer?.add(size>0.8 ? self.hardHitAnimation:self.hitAnimation, forKey: "backgroundColor")
 		}
@@ -132,9 +182,15 @@ class GuitarPageHandler: PageHandler {
 			if boxIdx < 0 {
 				return;
 			}
+			
+			let ch = if mpeMode {
+				touchesToMPEChannels[touch.identifier]!
+			} else {
+				midiChannel
+			}
+			
 			let newNote = midiNote(at: boxIdx)
 			
-			let pbMode = false
 			if pbMode {
 				// MIDI PB is assumed to be within -12 to +12 semitones
 				let minPB: Float = -12.0;
@@ -145,14 +201,19 @@ class GuitarPageHandler: PageHandler {
 				let pbVal: Int16 = Int16((pbPercent * 16383) - 8192)
 				if isPBing.contains(touch.identifier) || abs(diffSemis) > 0.1 {
 					isPBing.insert(touch.identifier)
-					try! midiSender.sendPitchBendMessage(value: pbVal)
+					try! midiSender.sendPitchBendMessage(value: pbVal, channel: ch)
 				}
 			} else {
 				if newNote != origNote {
 					let size = min(touch.size, 2.5) / 2.5
+					
+					// reuse same MPE channel
+					try! midiSender.sendNoteOnMessage(noteNumber: newNote, velocity: UInt8(size*127), channel: ch)
+
+					// todo: should note off be send after new note on? for legato to work
+					try! midiSender.sendNoteOffMessage(noteNumber: origNote, velocity: UInt8(size*127), channel: ch)
+					
 					touchesToNotes[touch.identifier] = (newNote, origTouchX, origTouchY)
-					try! midiSender.sendNoteOffMessage(noteNumber: origNote, velocity: UInt8(size*127))
-					try! midiSender.sendNoteOnMessage(noteNumber: newNote, velocity: UInt8(size*127))
 					DispatchQueue.main.async {
 						self.boxes[boxIdx].layer?.add(size>0.8 ? self.hardHitAnimation:self.hitAnimation, forKey: "backgroundColor")
 					}
@@ -164,9 +225,17 @@ class GuitarPageHandler: PageHandler {
 	func touchEnded(touch: M5MultitouchTouch) {
 		let id = touch.identifier;
 		if let (note, _, _) = touchesToNotes[id] {
-			try! midiSender.sendNoteOffMessage(noteNumber: note, velocity: 120)
+			let ch = if mpeMode {
+				touchesToMPEChannels[id]!
+			} else {
+				midiChannel
+			}
+			try! midiSender.sendNoteOffMessage(noteNumber: note, velocity: 120, channel: ch)
 			isPBing.remove(id)
 			touchesToNotes.removeValue(forKey: id)
+			if mpeMode {
+				freeMPEChannel(ch)
+			}
 		}
 	}
 }
