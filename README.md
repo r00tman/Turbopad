@@ -1,4 +1,4 @@
-<p align=center>Ever wondered what to do with this unnecessarily huge trackpad of yours?<br/> Turns out it's perfect for velocity-sensitive MIDI drum pads, CC's, guitars and more!</p>
+<p align=center>Ever wondered what to do with this unnecessarily huge trackpad of yours?<br/> Turns out it's perfect for velocity-sensitive MIDI drum pads, CC's, **MPE** guitars and more!</p>
 
 https://github.com/user-attachments/assets/ae6cb475-0d78-4b82-80ac-f43aefdf63b4
 
@@ -25,7 +25,7 @@ So far, I added
 - [x] Guitar mode with slide support:
   - [x] discrete slide mode (note off old note, note on new note)
   - [x] global slide mode (pitch bend the entire channel if finger moved enough)
-  - [ ] per-note slide pitch bend support (MPE) -- **TODO**
+  - [x] per-note slide pitch bend support (MPE) -- **needs testing**
 
 Ok, so I successfully replaced my janky and laggy TouchOSC setup with the integrated trackpad. One less device with battery to care about, no additional stands, almost instant response, super big=super precise controls. I'm happy.
 
