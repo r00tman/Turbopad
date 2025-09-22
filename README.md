@@ -39,7 +39,11 @@ In addition, it looks like I even replaced my [Launchpad95](https://github.com/h
 It does take about a week of practice to get accuracy and speed comparable to using physical pads, but after that, it works really well. Compared to cheap drum pads, the sensitivity of Apple trackpads is **extremely good**: even the lightest and fastest touches register well, which makes it really good for *fingerdrumming*. This is also good for MPE guitar mode, where my non-MPE Launchpad X sometimes fails to register lighter touches.
 
 **What's next?** I finished adding guitar mode and MPE support to it.  Now I would love to refactor code so that it's more user-configurable, not just through code, e.g.,
- - guitar mode settings: base note and octave, slide mode, no of strings/frets, string tuning, etc,
+ - guitar mode settings:
+   - [x] base note and octave,
+   - [ ] slide mode,
+   - [ ] no of strings/frets,
+   - [ ] custom string tuning,
  - drum pad layout and assignments?
 
 Other than that, I think I'm close to packaging the release binaries in a dmg, but first I need to fix some crashes and bugs where notes/fingers get stuck sometimes.
