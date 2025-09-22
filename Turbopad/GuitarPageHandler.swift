@@ -103,7 +103,8 @@ class GuitarPageHandler: PageHandler {
 	}
 	
 	func midiNote(at boxIdx: Int) -> UInt8 {
-		let baseNote = 52 // E3
+		// let baseNote = 52 // E3
+		let baseNote = guitarBaseNote
 		let (_, noteRel) = self.gridData[boxIdx]
 		let note = baseNote + noteRel
 		return UInt8(note)

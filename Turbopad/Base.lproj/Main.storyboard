@@ -662,7 +662,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Magic_Drumpad" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Turbopad" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -692,7 +692,7 @@
         <!--Trackpad Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="TrackpadController" customModule="Magic_Drumpad" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="TrackpadController" customModule="Turbopad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -842,55 +842,155 @@
         <!--Settings Controller-->
         <scene sceneID="GGq-tu-a69">
             <objects>
-                <viewController showSeguePresentationStyle="single" id="a11-kg-Xol" customClass="SettingsController" customModule="Magic_Drumpad" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController showSeguePresentationStyle="single" id="a11-kg-Xol" customClass="SettingsController" customModule="Turbopad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="WoT-XT-swG">
-                        <rect key="frame" x="0.0" y="0.0" width="164" height="82"/>
+                        <rect key="frame" x="0.0" y="0.0" width="333" height="88"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1lg-Yv-Wai">
-                                <rect key="frame" x="18" y="19" width="126" height="18"/>
-                                <buttonCell key="cell" type="check" title="Send MIDI notes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="vde-vJ-ec2">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="changeOutput:" target="a11-kg-Xol" id="W4y-oT-lxL"/>
-                                </connections>
-                            </button>
-                            <comboBox focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SBT-9C-7Fb">
-                                <rect key="frame" x="19" y="40" width="128" height="23"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="No2-0v-7NT">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <objectValues>
-                                        <string>Drums</string>
-                                        <string>CC</string>
-                                        <string>Guitar</string>
-                                    </objectValues>
-                                </comboBoxCell>
-                                <connections>
-                                    <action selector="changeMode:" target="a11-kg-Xol" id="9Cd-Cu-sEp"/>
-                                </connections>
-                            </comboBox>
+                            <gridView xPlacement="leading" yPlacement="fill" rowAlignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="G2d-uv-RYb">
+                                <rect key="frame" x="10" y="10" width="313" height="68"/>
+                                <rows>
+                                    <gridRow id="7gM-Ik-b9H"/>
+                                    <gridRow id="4Tb-Ri-05E"/>
+                                    <gridRow id="IlO-gj-OFg"/>
+                                </rows>
+                                <columns>
+                                    <gridColumn id="O0m-zL-y1c"/>
+                                    <gridColumn id="hR2-a1-0kX"/>
+                                </columns>
+                                <gridCells>
+                                    <gridCell row="7gM-Ik-b9H" column="O0m-zL-y1c" id="NNN-2q-rFb">
+                                        <textField key="contentView" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="A3n-Vm-4oB">
+                                            <rect key="frame" x="-2" y="50" width="42" height="16"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Mode:" id="5yh-8I-J4R">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </gridCell>
+                                    <gridCell row="7gM-Ik-b9H" column="hR2-a1-0kX" id="PRU-s5-EbC">
+                                        <comboBox key="contentView" focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SBT-9C-7Fb">
+                                            <rect key="frame" x="112" y="46" width="104" height="23"/>
+                                            <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="No2-0v-7NT">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <objectValues>
+                                                    <string>Drums</string>
+                                                    <string>CC</string>
+                                                    <string>Guitar</string>
+                                                </objectValues>
+                                            </comboBoxCell>
+                                            <connections>
+                                                <action selector="changeMode:" target="a11-kg-Xol" id="9Cd-Cu-sEp"/>
+                                            </connections>
+                                        </comboBox>
+                                    </gridCell>
+                                    <gridCell row="4Tb-Ri-05E" column="O0m-zL-y1c" id="XGi-1L-MYs">
+                                        <textField key="contentView" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rKA-Sp-Grf">
+                                            <rect key="frame" x="-2" y="26" width="87" height="16"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Drum Output:" id="MTn-bp-c5S">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </gridCell>
+                                    <gridCell row="4Tb-Ri-05E" column="hR2-a1-0kX" id="JK6-CD-8UA">
+                                        <button key="contentView" horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1lg-Yv-Wai">
+                                            <rect key="frame" x="111" y="25" width="126" height="18"/>
+                                            <buttonCell key="cell" type="check" title="Send MIDI notes" bezelStyle="regularSquare" imagePosition="left" inset="2" id="vde-vJ-ec2">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="changeOutput:" target="a11-kg-Xol" id="W4y-oT-lxL"/>
+                                            </connections>
+                                        </button>
+                                    </gridCell>
+                                    <gridCell row="IlO-gj-OFg" column="O0m-zL-y1c" id="Vm6-ZM-5X3">
+                                        <textField key="contentView" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iCc-p0-9K9">
+                                            <rect key="frame" x="-2" y="2" width="111" height="16"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="Guitar Base Note:" id="iYg-Fb-T3I">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </gridCell>
+                                    <gridCell row="IlO-gj-OFg" column="hR2-a1-0kX" id="Jp8-j8-Tk4">
+                                        <stackView key="contentView" distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMT-4h-hDf">
+                                            <rect key="frame" x="113" y="0.0" width="168" height="20"/>
+                                            <subviews>
+                                                <comboBox focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GQQ-sv-Nge">
+                                                    <rect key="frame" x="-1" y="-2" width="100" height="23"/>
+                                                    <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="CsG-rS-ih3">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        <objectValues>
+                                                            <string>Item 1</string>
+                                                            <string>Item 2</string>
+                                                            <string>Item 3</string>
+                                                        </objectValues>
+                                                    </comboBoxCell>
+                                                    <connections>
+                                                        <action selector="changeGuitarBaseNote:" target="a11-kg-Xol" id="jOT-p0-wI6"/>
+                                                    </connections>
+                                                </comboBox>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fuc-N0-ZoC">
+                                                    <rect key="frame" x="97" y="-7" width="41" height="32"/>
+                                                    <buttonCell key="cell" type="push" title="-" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IDg-tZ-ENI">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="octaveDownGuitarBaseNote:" target="a11-kg-Xol" id="mpZ-sr-PaJ"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="idG-IZ-dU1">
+                                                    <rect key="frame" x="132" y="-7" width="43" height="32"/>
+                                                    <buttonCell key="cell" type="push" title="+" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HBg-Jk-xk4">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="octaveUpGuitarBaseNote:" target="a11-kg-Xol" id="EaF-JP-ySS"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <visibilityPriorities>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                                <integer value="1000"/>
+                                            </visibilityPriorities>
+                                            <customSpacing>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                                <real value="3.4028234663852886e+38"/>
+                                            </customSpacing>
+                                        </stackView>
+                                    </gridCell>
+                                </gridCells>
+                            </gridView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="SBT-9C-7Fb" firstAttribute="centerX" secondItem="WoT-XT-swG" secondAttribute="centerX" id="30I-aO-6am"/>
-                            <constraint firstItem="SBT-9C-7Fb" firstAttribute="width" secondItem="1lg-Yv-Wai" secondAttribute="width" id="7rL-lA-BFt"/>
-                            <constraint firstItem="1lg-Yv-Wai" firstAttribute="centerX" secondItem="WoT-XT-swG" secondAttribute="centerX" id="FWl-P6-u6m"/>
-                            <constraint firstItem="1lg-Yv-Wai" firstAttribute="top" secondItem="SBT-9C-7Fb" secondAttribute="bottom" constant="6" id="LxA-BP-60y"/>
-                            <constraint firstAttribute="bottom" secondItem="1lg-Yv-Wai" secondAttribute="bottom" constant="20" id="MXb-yd-t62"/>
-                            <constraint firstItem="SBT-9C-7Fb" firstAttribute="top" secondItem="WoT-XT-swG" secondAttribute="top" constant="20" id="oyN-ax-rPd"/>
+                            <constraint firstItem="G2d-uv-RYb" firstAttribute="top" secondItem="WoT-XT-swG" secondAttribute="top" constant="10" id="PBe-QJ-KWb"/>
+                            <constraint firstItem="G2d-uv-RYb" firstAttribute="leading" secondItem="WoT-XT-swG" secondAttribute="leading" constant="10" id="bsw-F8-g4u"/>
+                            <constraint firstAttribute="bottom" secondItem="G2d-uv-RYb" secondAttribute="bottom" constant="10" id="gkN-zL-CcV"/>
+                            <constraint firstAttribute="trailing" secondItem="G2d-uv-RYb" secondAttribute="trailing" constant="10" id="xuo-aJ-rzv"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="guitarBaseNoteCombo" destination="GQQ-sv-Nge" id="5SC-hg-cCn"/>
                         <outlet property="midiSwitch" destination="1lg-Yv-Wai" id="VtY-Z7-fqb"/>
                         <outlet property="modeCombo" destination="SBT-9C-7Fb" id="tcO-5x-KOX"/>
                     </connections>
                 </viewController>
                 <customObject id="BJq-So-B7L" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="529" y="586"/>
+            <point key="canvasLocation" x="610.5" y="597.5"/>
         </scene>
     </scenes>
     <resources>
