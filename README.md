@@ -59,6 +59,7 @@ For archiving (building release bundle) to work, install libarc files which were
 
 ```bash
 git clone https://github.com/kamyarelyasi/Libarclite-Files.git
+sudo mkdir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/arc/
 sudo cp Libarclite-Files/*.a /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/arc/
 ```
 
