@@ -50,7 +50,9 @@ Other than that, I think I'm close to packaging the release binaries in a dmg, b
 
 It would be super cool to support microtonal tunings in guitar mode by shifting fret positions like in [Tolgahan's guitars](https://www.youtube.com/@microtonalguitar) (e.g., through scala files & MPE pitch bend messages). Or at least have different EDO's.
 
-I'm also considering adding a hex-keyed harmonic table mode, as on [Lumatone](https://www.lumatone.io/) or [Exquis](https://dualo.com/en/exquis/). But it's probably be just a toy rather than a useful instrument due to the limited number of keys that could fit the trackpad. I think already implemented MPE guitar mode is likely more playable and usable.
+I'm also considering adding a hex-keyed harmonic table mode, as on [Lumatone](https://www.lumatone.io/) or [Exquis](https://dualo.com/en/exquis/). But it would probably be just a toy rather than a useful instrument due to the limited number of keys that could fit the trackpad. I think already implemented MPE guitar mode is likely more playable and usable. **Update:** I made [https://github.com/r00tman/Keydion], which is quite close to this idea!
+
+Also I figured out MPE guitar only works properly with Ableton at the moment but not with Surge or Vital. That needs debugging and fixing. Also somehow MPE allocation function crashes sometimes even when using 3-4 fingers somehow. That needs debugging and fixing too.
 
 ## Installation
 I don't have GitHub releases yet, so please clone the repo, do `pod install`, open workspace in Xcode and compile. For some reason, it doesn't work with App Sandbox enabled, so I turned it off, idk which entitlement it needs. Also turn off Build Settings->Sandbox user scripts (if it is on), otherwise it won't build.
@@ -79,6 +81,11 @@ Tested trackpads:
 - **MPE** guitar mode with sliding
 - Global shortcuts to configure settings
 - Themed to support macOS Mojave Dark mode
+
+## Other cool stuff
+If you liked this repo, then you probably would love my other repo too: [Keydion](https://github.com/r00tman/Keydion)!
+
+It allows you to use your computer keyboard as an ergonomic full 3 octave MIDI controller with accordion layout.
 
 ### Where to start ... for developers
 - User interface: [Main.storyboard](Turbopad/Base.lproj/Main.storyboard)
